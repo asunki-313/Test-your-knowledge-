@@ -1,3 +1,2 @@
-# اختبر ذكاءك V13 PWA
-
-2500-question PWA build. 10-second answer timer. Home order: game modes, player account, daily chest, leaderboard.
+# اختبر ذكاءك V.13.10 PWA
+10,000 سؤال موزعة على 25 قسم، مع تنويع في الصياغة وتجنب تكرار السؤال نفسه داخل الجولات. مؤقت الإجابة 10 ثوانٍ. النسخة مبنية على V.13 المرجعية.
