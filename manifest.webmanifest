@@ -1,7 +1,7 @@
 {
-  "name": "اختبر ذكاءك",
-  "short_name": "اختبر ذكاءك",
-  "description": "لعبة أسئلة وذكاء يومية",
+  "name": "اختبر ذكاءك V13",
+  "short_name": "اختبر ذكاءك V13",
+  "description": "لعبة أسئلة وذكاء يومية — V13",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "./",
