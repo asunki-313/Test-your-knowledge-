@@ -197,6 +197,9 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+  bd.setting({
+    experimentalForceLongPolling: true
+  });
 
 const btn = document.getElementById("fbTestBtn");
 const msg = document.getElementById("fbTestMsg");
