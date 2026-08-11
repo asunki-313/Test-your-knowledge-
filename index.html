@@ -186,32 +186,44 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
-(function(){
- const $=id=>document.getElementById(id);
- const open=$("fbTestOpen"), box=$("fbTestBox"), btn=$("fbTestBtn"), cfg=$("fbConfig"), msg=$("fbTestMsg");
- if(!open)return;
- open.onclick=()=>{box.style.display=box.style.display==='none'?'block':'none';};
- btn.onclick=async()=>{
-   msg.textContent='⏳ جاري اختبار الاتصال...';
-   try{
-     let raw=cfg.value.trim();
-     if(!raw) throw new Error('الصق firebaseConfig أولًا.');
-     raw=raw.replace(/^const\s+firebaseConfig\s*=\s*/,'').replace(/;\s*$/,'');
-     const firebaseConfig=Function('return ('+raw+')')();
-     if(!firebaseConfig.projectId) throw new Error('firebaseConfig غير مكتمل: projectId مفقود.');
-     if(window.firebase.apps.length) window.firebase.app().delete();
-     const app=window.firebase.initializeApp(firebaseConfig);
-     const db=window.firebase.firestore(app);
-     try{
-       await db.collection('__connection_test__').doc('ping').get();
-       msg.textContent='🟢 Firebase متصل وFirestore يستجيب.';
-     }catch(e){
-       if(e && (e.code==='permission-denied'||String(e.message).includes('Missing or insufficient permissions'))){
-         msg.textContent='🟢 Firebase متصل فعليًا، لكن Firestore يمنع القراءة المجهولة (Production Rules) — وهذا متوقع حاليًا.';
-       }else throw e;
-     }
-   }catch(e){ msg.textContent='🔴 فشل الاختبار: '+(e.message||e); }
- };
-})();
+const firebaseConfig = {
+  apiKey: "AIzaSyBQLQpegbORXD17oTEa5bquTQVh_3x0Ps0",
+  authDomain: "asunki-quiz313.firebaseapp.com",
+  projectId: "asunki-quiz313",
+  storageBucket: "asunki-quiz313.firebasestorage.app",
+  messagingSenderId: "546129315925",
+  appId: "1:546129315925:web:02f773793e0bce12e7acdc"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+const btn = document.getElementById("fbTestBtn");
+const msg = document.getElementById("fbTestMsg");
+
+if (btn) {
+  btn.onclick = async () => {
+    msg.textContent = "⏳ جاري اختبار الاتصال بـ Firebase...";
+
+    try {
+      await db.collection("__connection_test__").doc("ping").get();
+
+      msg.textContent = "🟢 الاتصال بـ Firebase و Firestore ناجح!";
+    } catch (error) {
+      console.error(error);
+
+if (
+error.code === "permission-denied" ||
+String(error.message).includes("Missing or insufficient permissions")
+) {
+msg.textContent =
+"🟡 Firebase متصل، لكن Firestore يمنع القراءة بسبب Rules.";
+} else {
+msg.textContent =
+"🔴 فشل الاتصال: " + (error.message || error);
+}
+}
+};
+}
 </script>
 </body></html>
