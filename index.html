@@ -206,6 +206,7 @@ if (btn) {
     msg.textContent = "⏳ جاري اختبار الاتصال بـ Firebase...";
 
     try {
+      await db.enableNetwork();
       await db.collection("__connection_test__").doc("ping").get();
 
       msg.textContent = "🟢 الاتصال بـ Firebase و Firestore ناجح!";
