@@ -14,3 +14,6 @@
 - لا يوجد شراء لمساعدة تجنب السؤال.
 - XP تراكمي بنظام 500 لكل مستوى.
 - PWA وService Worker محدثان إلى V.13.50.
+
+
+V.13.50.2 Firebase initialization: Firebase App + Authentication + Cloud Firestore SDKs are initialized in index.html. Player data remains on localStorage until the next Firebase migration step.
