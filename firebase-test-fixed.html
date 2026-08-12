@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Connection Test</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111735;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .box {
+      width: 100%;
+      max-width: 650px;
+      background: #1b2248;
+      border-radius: 22px;
+      padding: 25px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    h1 { margin-top: 0; }
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 8px;
+    }
+    #testBtn { background: #fff; color: #287bea; }
+    #status {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 14px;
+      background: #0d1330;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.7;
+      text-align: right;
+    }
+    .config {
+      margin-top: 15px;
+      background: #0d1330;
+      border-radius: 14px;
+      padding: 15px;
+      text-align: left;
+      direction: ltr;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>🔥 اختبار Firebase</h1>
+    <p>هذه صفحة اختبار مستقلة. لا علاقة لها بملف اللعبة <b>index.html</b>.</p>
+
+    <button id="testBtn">اختبار الاتصال الآن</button>
+
+    <div id="status">اضغط الزر لبدء الاختبار.</div>
+
+    <div class="config">
+const firebaseConfig = {
+  apiKey: "AIzaSyBQLQpegbORXD17oTEa5bquTQVh_3x0Ps0",
+  authDomain: "asunki-quiz313.firebaseapp.com",
+  projectId: "asunki-quiz313",
+  storageBucket: "asunki-quiz313.firebasestorage.app",
+  messagingSenderId: "546129315925",
+  appId: "1:546129315925:web:02f773793e0bce12e7acdc"
+};
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBQLQpegbORXD17oTEa5bquTQVh_3x0Ps0",
+      authDomain: "asunki-quiz313.firebaseapp.com",
+      projectId: "asunki-quiz313",
+      storageBucket: "asunki-quiz313.firebasestorage.app",
+      messagingSenderId: "546129315925",
+      appId: "1:546129315925:web:02f773793e0bce12e7acdc"
+    };
+
+    const status = document.getElementById("status");
+    const btn = document.getElementById("testBtn");
+
+    btn.addEventListener("click", async () => {
+      btn.disabled = true;
+      status.textContent = "⏳ جاري الاختبار...";
+
+      try {
+        // 1) اختبار الوصول إلى Google/Firestore عبر HTTP مباشرة
+        const url =
+          "https://firestore.googleapis.com/v1/projects/asunki-quiz313/databases/(default)/documents/test/ping";
+
+        const response = await fetch(url, {
+          method: "GET",
+          cache: "no-store"
+        });
+
+        let httpResult = "HTTP " + response.status;
+
+        // 2) تشغيل Firebase SDK
+        if (!firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+        }
+
+        const db = firebase.firestore();
+        await db.enableNetwork();
+
+        // 3) قراءة test/ping من Firestore
+        const snap = await db.collection("test").doc("ping").get({
+          source: "server"
+        });
+
+        if (snap.exists) {
+          status.textContent =
+            "🟢 نجح الاتصال بالكامل!\n\n" +
+            httpResult + "\n" +
+            "Firebase SDK: يعمل\n" +
+            "Firestore: متصل\n" +
+            "Document: test/ping موجود\n\n" +
+            "البيانات:\n" +
+            JSON.stringify(snap.data(), null, 2);
+        } else {
+          status.textContent =
+            "🟢 وصلنا إلى Firestore، لكن المستند test/ping غير موجود.\n\n" +
+            httpResult + "\n" +
+            "Firebase SDK: يعمل\n" +
+            "Firestore: متصل";
+        }
+
+      } catch (error) {
+        console.error(error);
+
+        status.textContent =
+          "🔴 فشل الاختبار\n\n" +
+          "الرسالة:\n" +
+          (error.message || error) +
+          "\n\n" +
+          "إذا ظهرت كلمة offline مرة أخرى، ننتقل مباشرة لفحص " +
+          "اتصال GitHub Pages وقواعد Firestore.";
+      }
+
+      btn.disabled = false;
+    });
+  </script>
+</body>
+</html>
