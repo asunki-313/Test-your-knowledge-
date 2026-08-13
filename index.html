@@ -261,40 +261,36 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
       btn.disabled=true;
       msg.textContent="⏳ جاري اختبار Firebase وFirestore...";
       try{
-        const endpoint =
-          "https://firestore.googleapis.com/v1/projects/asunki-quiz313/databases/(default)/documents/test/ping";
-
-        let httpStatus="غير معروف";
-        try{
-          const r=await fetch(endpoint,{method:"GET",cache:"no-store"});
-          httpStatus="HTTP "+r.status;
-        }catch(e){
-          httpStatus="HTTPS fetch فشل";
-        }
-
-        const {db}=ensureFirebase();
+        const {db,auth}=ensureFirebase();
         await db.enableNetwork();
+
+        const user=auth.currentUser;
+
+        if(!user){
+          msg.textContent =
+            "🟡 Firebase SDK متصل وجاهز.\n"+
+            "لكن اختبار Firestore يحتاج تسجيل دخول Firebase أولًا.";
+          btn.disabled=false;
+          return;
+        }
 
         try{
           const snap=await db.collection("connection_test").doc("ping").get({source:"server"});
+
           if(snap.exists){
             msg.textContent =
               "🟢 Firebase + Firestore يعملان.\n"+
-              httpStatus+"\n"+
+              "المستخدم: "+(user.phoneNumber || user.uid)+"\n"+
               "Document: connection_test/ping موجود.";
           }else{
             msg.textContent =
               "🟢 وصلنا إلى Firestore.\n"+
-              httpStatus+"\n"+
-              "لكن Document الاختبار غير موجود.";
+              "لكن Document connection_test/ping غير موجود.";
           }
         }catch(e){
-          if(e && (e.code==="permission-denied" ||
-              String(e.message).includes("Missing or insufficient permissions"))){
+          if(e && e.code==="permission-denied"){
             msg.textContent =
-              "🟡 Firebase متصل فعليًا.\n"+
-              httpStatus+"\n"+
-              "Firestore يمنع القراءة بسبب Rules.";
+              "🟡 Firebase متصل، لكن Rules تمنع قراءة Firestore لهذا المستخدم.";
           }else{
             throw e;
           }
