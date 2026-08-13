@@ -15,7 +15,7 @@
 <div class="panel"><div style="display:flex;justify-content:space-between">المستوى <b id="level">1</b><span><b id="xp">0</b> / <b id="need">500</b> XP</span></div><div class="xpbar"><div id="xpbar"></div></div></div>
 <button class="btn green" onclick="normalStart()">🧠 اختبار فردي — أسئلة اليوم</button><button class="btn blue" onclick="dailyPage()">📅 التحدي اليومي</button><button class="btn purple" onclick="lobby()">👥 الجلسة — فريقين</button>
 <div class="v13hub">
-<div class="v13c"><h2>👤 حساب اللاعب</h2><div class="v13muted">تسجيل الدخول اختياري حاليًا. الربط الحقيقي مع Firebase Phone OTP سيكون في المرحلة التالية.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><input id="v13Phone" class="v13i" inputmode="tel" placeholder="+966 5XXXXXXXX"><button class="v13b" id="v13Send">إرسال OTP</button><div id="v13OtpBox" style="display:none"><input id="v13Otp" class="v13i" inputmode="numeric" maxlength="6" placeholder="رمز التحقق"><button class="v13b" id="v13Verify">تحقق</button></div><div id="v13Msg" class="v13muted"></div></div></div>
+<div class="v13c"><h2>👤 حساب اللاعب</h2><div class="v13muted">تسجيل الدخول اختياري حاليًا. الربط الحقيقي مع Firebase Phone OTP سيكون في المرحلة التالية.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="fbWriteBtn" type="button">💾 اختبار كتابة بيانات اللاعب</button><div id="fbWriteMsg" class="v13muted" style="margin-top:8px"></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><input id="v13Phone" class="v13i" inputmode="tel" placeholder="+966 5XXXXXXXX"><button class="v13b" id="v13Send">إرسال OTP</button><div id="v13OtpBox" style="display:none"><input id="v13Otp" class="v13i" inputmode="numeric" maxlength="6" placeholder="رمز التحقق"><button class="v13b" id="v13Verify">تحقق</button></div><div id="v13Msg" class="v13muted"></div></div></div>
 <div class="v13c"><h2>🎁 الصندوق اليومي</h2><p>المكافأة المعتادة <b>100 Coins</b>، مع فرصة محدودة للحصول على <b>200 Coins</b>.</p><button class="v13b" id="v13Chest">فتح الصندوق 🎁</button><div id="v13ChestMsg">🎁 الصندوق جاهز</div><div id="v13Streak" class="v13muted"></div></div>
 <div class="v13c"><h2>🏆 Leaderboard</h2><div class="leaderPrize">🥇 اكسب <b>500 ريال شهريًا</b> للمركز الأول</div><p class="v13muted">الترتيب الحقيقي سيتم ربطه بـFirebase في المرحلة التالية.</p><div class="v13tabs"><button class="v13tab active">🌎 عالمي</button><button class="v13tab">🇸🇦 السعودية</button><button class="v13tab">👥 الأصدقاء</button></div></div>
 <div class="v13c"><h2>📖 تعليمات اللعبة</h2><p class="v13muted">اعرف طريقة اللعب، نظام القلوب، XP، العملات الذهبية، والوقت.</p><button class="v13b" onclick="go('instructions')">📖 فتح التعليمات</button></div>
@@ -191,7 +191,7 @@ window.V13_CONFIG={version:"13.6",questionCount:5000,noRepeatWindow:50,noRepeatW
 <script>
 (function(){
   const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyBQLQpegbORXD17oTEa5bquTQVh_3x0Ps0",
+    apiKey: "AIzaSyBQL0PegbORXD17oTEa5bquTQVh_3x0Ps0",
     authDomain: "asunki-quiz313.firebaseapp.com",
     projectId: "asunki-quiz313",
     storageBucket: "asunki-quiz313.firebasestorage.app",
@@ -247,12 +247,12 @@ window.V13_CONFIG={version:"13.6",questionCount:5000,noRepeatWindow:50,noRepeatW
       if(cfg && !cfg.value.trim()){
         cfg.value =
 `const firebaseConfig = {
-  apiKey: "AIzaSyBQLQpegbORXD17oTEa5bquTQVh_3x0Ps0",
-  authDomain: "asunki-quiz313.firebaseapp.com",
-  projectId: "asunki-quiz313",
-  storageBucket: "asunki-quiz313.firebasestorage.app",
-  messagingSenderId: "546129315925",
-  appId: "1:546129315925:web:02f773793e0bce12e7acdc"
+  "apiKey": "AIzaSyBQL0PegbORXD17oTEa5bquTQVh_3x0Ps0",
+  "authDomain": "asunki-quiz313.firebaseapp.com",
+  "projectId": "asunki-quiz313",
+  "storageBucket": "asunki-quiz313.firebasestorage.app",
+  "messagingSenderId": "546129315925",
+  "appId": "1:546129315925:web:02f773793e0bce12e7acdc"
 };`;
       }
     };
@@ -299,6 +299,44 @@ window.V13_CONFIG={version:"13.6",questionCount:5000,noRepeatWindow:50,noRepeatW
         msg.textContent="🔴 فشل اختبار Firebase:\n"+friendlyError(e);
       }
       btn.disabled=false;
+    };
+  }
+
+  // Firestore real-player write test: users/{uid}
+  const fbWriteBtn=document.getElementById("fbWriteBtn");
+  const fbWriteMsg=document.getElementById("fbWriteMsg");
+  if(fbWriteBtn){
+    fbWriteBtn.onclick=async()=>{
+      fbWriteBtn.disabled=true;
+      if(fbWriteMsg) fbWriteMsg.textContent="⏳ جاري اختبار كتابة بيانات اللاعب...";
+      try{
+        const {db,auth}=ensureFirebase();
+        await db.enableNetwork();
+        const user=auth.currentUser;
+        if(!user){
+          if(fbWriteMsg) fbWriteMsg.textContent="🟡 سجّل دخول اللاعب أولًا ثم أعد الاختبار.";
+          fbWriteBtn.disabled=false;
+          return;
+        }
+        const ref=db.collection("users").doc(user.uid);
+        await ref.set({
+          phoneNumber:user.phoneNumber || null,
+          uid:user.uid,
+          firebaseTest:true,
+          lastTestAt:firebase.firestore.FieldValue.serverTimestamp(),
+          testVersion:"V.13.6"
+        },{merge:true});
+        const snap=await ref.get({source:"server"});
+        if(snap.exists){
+          if(fbWriteMsg) fbWriteMsg.textContent="🟢 تمت كتابة وقراءة بيانات اللاعب بنجاح. users/"+user.uid;
+        }else{
+          if(fbWriteMsg) fbWriteMsg.textContent="🟡 تمت الكتابة لكن تعذر تأكيد المستند.";
+        }
+      }catch(e){
+        console.error(e);
+        if(fbWriteMsg) fbWriteMsg.textContent="🔴 فشل اختبار كتابة بيانات اللاعب: "+friendlyError(e);
+      }
+      fbWriteBtn.disabled=false;
     };
   }
 
