@@ -376,19 +376,23 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
   async function syncPlayerToFirestore(){
     if(!firebaseUser || !fbDb) return;
 
+    const SAFE_NUM=(value,fallback)=>{
+      const n=Number(value);
+      return Number.isFinite(n) ? n : fallback;
+    };
     const payload={
       uid:firebaseUser.uid,
       phoneNumber:firebaseUser.phoneNumber || "",
-      level:Number(window.level || localStorage.getItem("level") || 1),
-      xp:Number(window.xp || localStorage.getItem("xp") || 0),
-      totalXP:Number(localStorage.getItem("totalXP") || 0),
-      coins:Number(window.coins || localStorage.getItem("coins") || 0),
-      correctTotal:Number(window.correctTotal || localStorage.getItem("correctTotal") || 0),
-      wrongAnswers:Number(window.wrongAnswers || localStorage.getItem("wrongAnswers") || 0),
-      questionsAnswered:Number(window.questionsAnswered || localStorage.getItem("questionsAnswered") || 0),
-      gamesPlayed:Number(window.gamesPlayed || localStorage.getItem("gamesPlayed") || 0),
-      dailyScore:Number(window.dailyScore || localStorage.getItem("dailyScore") || 0),
-      streak:Number(window.streak || localStorage.getItem("streak") || 0),
+      level:SAFE_NUM(window.level,1),
+      xp:SAFE_NUM(window.xp,0),
+      totalXP:SAFE_NUM(localStorage.getItem("totalXP"),0),
+      coins:SAFE_NUM(window.coins,0),
+      correctTotal:SAFE_NUM(window.correctTotal,0),
+      wrongAnswers:SAFE_NUM(window.wrongAnswers,0),
+      questionsAnswered:SAFE_NUM(window.questionsAnswered,0),
+      gamesPlayed:SAFE_NUM(window.gamesPlayed,0),
+      dailyScore:SAFE_NUM(window.dailyScore,0),
+      streak:SAFE_NUM(window.streak,0),
       lastPlayed:localStorage.getItem("lastPlayed") || "",
       updatedAt:firebase.firestore.FieldValue.serverTimestamp()
     };
@@ -452,4 +456,55 @@ const z=await ref.get(),saved=Number(z.data().syncTest);if(saved!==v)throw Error
 m.textContent="🟢 Player Sync ناجح بالكامل!\nUID: "+u.uid+"\nsyncTest قبل: "+old+"\nsyncTest بعد: "+saved+"\n\nFirebase → Firestore → users → UID";
 }catch(e){m.textContent="🔴 فشل Player Sync:\n"+(e.message||e)}finally{b.disabled=false}}
 })();
-</script></body></html>
+</script>
+<div id="v1362SafeSyncTest" style="margin:10px 0">
+<button id="v1362SafeSyncTestBtn" type="button">🧪 اختبار Player Sync V.13.6.2</button>
+<div id="v1362SafeSyncMsg" style="white-space:pre-wrap;margin-top:8px"></div>
+</div>
+<script>
+(function(){
+  const b=document.getElementById("v1362SafeSyncTestBtn");
+  const m=document.getElementById("v1362SafeSyncMsg");
+  if(!b)return;
+  b.onclick=async()=>{
+    b.disabled=true;
+    m.textContent="🟡 جاري اختبار Player Sync V.13.6.2...";
+    try{
+      const r=ensureFirebase(),u=r.auth.currentUser;
+      if(!u)throw Error("سجّل الدخول أولًا.");
+      const num=(v,f)=>Number.isFinite(Number(v))?Number(v):f;
+      const data={
+        uid:u.uid,
+        phoneNumber:u.phoneNumber||"",
+        level:num(window.level,1),
+        xp:num(window.xp,0),
+        totalXP:num(localStorage.getItem("totalXP"),0),
+        coins:num(window.coins,0),
+        correctTotal:num(window.correctTotal,0),
+        wrongAnswers:num(window.wrongAnswers,0),
+        questionsAnswered:num(window.questionsAnswered,0),
+        gamesPlayed:num(window.gamesPlayed,0),
+        dailyScore:num(window.dailyScore,0),
+        streak:num(window.streak,0),
+        lastPlayed:localStorage.getItem("lastPlayed")||"",
+        updatedAt:firebase.firestore.FieldValue.serverTimestamp(),
+        playerSyncVersion:"V.13.6.2"
+      };
+      await r.db.collection("users").doc(u.uid).set(data,{merge:true});
+      const snap=await r.db.collection("users").doc(u.uid).get();
+      const d=snap.data()||{};
+      const bad=Object.entries({
+        level:d.level,xp:d.xp,totalXP:d.totalXP,coins:d.coins,
+        correctTotal:d.correctTotal,wrongAnswers:d.wrongAnswers,
+        questionsAnswered:d.questionsAnswered,gamesPlayed:d.gamesPlayed,
+        dailyScore:d.dailyScore,streak:d.streak
+      }).filter(([k,v])=>!Number.isFinite(Number(v)));
+      if(bad.length)throw Error("ما زالت توجد قيم غير صالحة: "+bad.map(x=>x[0]).join(", "));
+      m.textContent="🟢 V.13.6.2 Player Sync ناجح.\nتم حفظ وقراءة جميع القيم الرقمية بدون NaN.\nUID: "+u.uid;
+    }catch(e){m.textContent="🔴 فشل الاختبار:\n"+(e.message||e);}
+    finally{b.disabled=false;}
+  };
+})();
+</script>
+
+</body></html>
