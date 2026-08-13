@@ -439,4 +439,17 @@ if("serviceWorker" in navigator){
 .v13-firebase-status{margin-top:8px;font-size:13px;line-height:1.6}
 </style>
 
-</body></html>
+<div id="v13PlayerSyncTestWrap"><button id="v13PlayerSyncTestBtn" type="button">🧪 اختبار Player Sync</button><div id="v13PlayerSyncTestMsg"></div></div><script>
+(function(){
+const b=document.getElementById("v13PlayerSyncTestBtn"),m=document.getElementById("v13PlayerSyncTestMsg");
+if(!b)return;
+b.onclick=async()=>{b.disabled=true;m.textContent="🟡 جاري اختبار Player Sync...";
+try{
+const r=ensureFirebase(),u=r.auth.currentUser;if(!u)throw Error("سجّل الدخول أولًا.");
+const ref=r.db.collection("users").doc(u.uid),a=await ref.get(),old=Number(a.exists?a.data().syncTest||0:0),v=old+1;
+await ref.set({syncTest:v,syncTestAt:firebase.firestore.FieldValue.serverTimestamp(),syncTestVersion:"V.13.6"},{merge:true});
+const z=await ref.get(),saved=Number(z.data().syncTest);if(saved!==v)throw Error("القيمة المقروءة لا تطابق المكتوبة.");
+m.textContent="🟢 Player Sync ناجح بالكامل!\nUID: "+u.uid+"\nsyncTest قبل: "+old+"\nsyncTest بعد: "+saved+"\n\nFirebase → Firestore → users → UID";
+}catch(e){m.textContent="🔴 فشل Player Sync:\n"+(e.message||e)}finally{b.disabled=false}}
+})();
+</script></body></html>
