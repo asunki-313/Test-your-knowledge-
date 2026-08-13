@@ -276,12 +276,12 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
         await db.enableNetwork();
 
         try{
-          const snap=await db.collection("__connection_test__").doc("ping").get({source:"server"});
+          const snap=await db.collection("connection_test").doc("ping").get({source:"server"});
           if(snap.exists){
             msg.textContent =
               "🟢 Firebase + Firestore يعملان.\n"+
               httpStatus+"\n"+
-              "Document: __connection_test__/ping موجود.";
+              "Document: connection_test/ping موجود.";
           }else{
             msg.textContent =
               "🟢 وصلنا إلى Firestore.\n"+
