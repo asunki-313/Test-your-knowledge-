@@ -1,19 +1,10 @@
 {
-  "name": "اختبر ذكاءك",
+  "name": "اختبر ذكاءك V.14.10",
   "short_name": "اختبر ذكاءك",
-  "lang": "ar-SA",
-  "dir": "rtl",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07122a",
+  "background_color": "#10152f",
   "theme_color": "#10152f",
-  "description": "لعبة اختبر ذكاءك — أسئلة وتحديات يومية",
-  "icons": [
-    {
-      "src": "thinking_person.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
+  "lang": "ar",
+  "dir": "rtl"
 }
