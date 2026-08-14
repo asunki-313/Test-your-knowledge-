@@ -1,0 +1,11 @@
+V.15.95 PWA TEST BUILD
+Base: V.15.8 stable BASE
+- 3500-question bank retained.
+- Leaderboard: All Time / Monthly / Friends.
+- All Time: nickname + level + XP.
+- Monthly: calendar-month monthlyXP, resets logically by monthlyKey.
+- Monthly top-5 prize announcement: 500 / 250 / 100 / 50 / 50 SAR.
+- Automatic Player Sync remains visible.
+- Firebase connection test/debug UI hidden.
+- +966 placed on left; local Saudi mobile input remains centered and begins with 5.
+- OTP mechanics preserved; Firebase configuration still determines real SMS delivery.

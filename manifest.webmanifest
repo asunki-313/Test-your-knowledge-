@@ -1,13 +1,13 @@
 {
-  "name": "اختبر ذكاءك V.15.8",
-  "short_name": "اختبر ذكاءك V15.8",
+  "name": "اختبر ذكاءك V.15.95",
+  "short_name": "اختبر ذكاءك V15.95",
   "lang": "ar-SA",
   "dir": "rtl",
-  "start_url": "./?v=15.8",
+  "start_url": "./?v=15.95",
   "display": "standalone",
   "background_color": "#07122a",
   "theme_color": "#10152f",
-  "description": "لعبة اختبر ذكاءك V.15.8 — بنك 3500 سؤال وتحديات يومية",
+  "description": "اختبر ذكاءك V.15.95 PWA — نسخة تجريبية مبنية على V.15.8 BASE وبنك 3500 سؤال",
   "icons": [
     {
       "src": "thinking_person.png",
@@ -16,6 +16,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "15.8",
-  "id": "./?v=15.8"
+  "version": "15.95",
+  "id": "./?v=15.95"
 }

@@ -1,0 +1,24 @@
+{
+  "version": "V.15.95",
+  "base": "V.15.8",
+  "questions": 3500,
+  "uniqueIds": 3500,
+  "leaderboard": [
+    "All Time",
+    "Monthly",
+    "Friends"
+  ],
+  "monthlyPrizesSAR": [
+    500,
+    250,
+    100,
+    50,
+    50
+  ],
+  "automaticPlayerSync": "VISIBLE",
+  "firebaseConnectionTest": "HIDDEN",
+  "phoneLayout": "+966 LEFT / local 5XXXXXXXX CENTER",
+  "otpFlow": "PRESERVED — delivery depends on Firebase project configuration",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}
