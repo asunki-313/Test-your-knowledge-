@@ -1,0 +1,9 @@
+V.15.0 PWA
+Base: approved V14.20 PWA supplied by user.
+Question bank: 1,500 cumulative questions.
+Rules applied:
+- 30 approved categories retained from bank.
+- Question repeat memory window: 100 questions.
+- Daily challenge prioritizes hard/expert questions.
+- Daily challenge attempts category diversity.
+- UI/layout/assets preserved from V14.20 base.
