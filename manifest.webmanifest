@@ -1,5 +1,5 @@
 {
-  "name": "اختبر ذكاءك",
+  "name": "اختبر ذكاءك v.14.10",
   "short_name": "اختبر ذكاءك",
   "lang": "ar-SA",
   "dir": "rtl",
@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#07122a",
   "theme_color": "#10152f",
-  "description": "لعبة اختبر ذكاءك — أسئلة وتحديات يومية",
+  "description": "لعبة اختبر ذكاءك v.14.10 — أسئلة وتحديات يومية",
   "icons": [
     {
       "src": "thinking_person.png",

@@ -3,7 +3,7 @@
 <meta name="theme-color" content="#080d2b"><title>اختبر ذكاءك V.13.50.3</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#080d2b;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial}.app{max-width:540px;margin:auto;padding:15px;min-height:100vh}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:22px;font-weight:900;color:#ffc62e}.wallet{background:#151d4d;border:1px solid #3a467b;border-radius:20px;padding:8px}.screen{display:none}.on{display:block}.hero{text-align:center;padding:20px}.brain{font-size:65px}.brainImg{width:150px;height:150px;object-fit:contain;border-radius:24px;display:block;margin:0 auto 8px}.hero h1{color:#ffc62e;font-size:38px;margin:5px}.sub,.muted{color:#aeb7df}.btn{width:100%;padding:14px;margin:5px 0;border:0;border-radius:14px;font-size:17px;font-weight:900}.green{background:#34c759;color:white}.blue{background:#1976ff;color:white}.purple{background:#7b35d9;color:white}.orange{background:#f5a900}.dark{background:#151d4d;color:white;border:1px solid #3a467b}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.tile,.panel,.row{background:#11183d;border:1px solid #293462;border-radius:14px;padding:12px}.tile{text-align:center}.tile b{display:block;font-size:21px}.tile span{font-size:12px;color:#aeb7df}.xpbar{height:11px;background:#151d4d;border-radius:10px;overflow:hidden;margin-top:7px}.xpbar div{height:100%;background:#ffc62e;width:0}.notice{background:#11183d;border:1px solid #293462;border-radius:14px;padding:11px;margin:10px 0;color:#cbd2f3;font-size:13px}.list{display:grid;gap:8px}.row{display:flex;align-items:center;gap:10px}.icon{font-size:27px}.claimed{opacity:.45}.qhead{display:flex;justify-content:space-between}.timer{background:#14204b;padding:6px 10px;border-radius:18px}.progress{height:9px;background:#12183a;border-radius:9px;margin:10px 0 15px}.bar{height:100%;background:#35d06f;width:0}.card{background:#f6f7fb;color:#161a2d;border-radius:20px;padding:17px}.badge{display:inline-block;background:#7b35d9;color:white;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:900}.question{text-align:center;font-size:22px;font-weight:900;line-height:1.5;margin:15px 0}.answers{display:grid;gap:8px}.answer{background:white;color:#171a2c;border:2px solid #d4d7e2;border-radius:13px;padding:13px;font-size:17px;font-weight:800}.correct{background:#d9f8df!important;border-color:#27b94e!important}.wrong{background:#ffe0e0!important;border-color:#e74747!important}.tools{display:flex;gap:6px;margin-top:10px}.tools button{flex:1;background:#11183d;color:white;border:1px solid #3a467b;border-radius:10px;padding:9px;font-weight:900}.score{text-align:center;font-size:58px;color:#ffc62e;font-weight:1000}.shopItem{background:#11183d;border:1px solid #293462;border-radius:14px;padding:12px}.field{width:100%;padding:13px;border-radius:10px;border:1px solid #3a467b;background:#0b1131;color:white;font-size:16px} .heart-display{display:inline-flex;gap:1px;vertical-align:-.08em;margin:0 3px}.heart-piece{font-size:18px;line-height:1;background:linear-gradient(90deg,#ff3b4e var(--fill),#3a4268 var(--fill));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px #ff6b7a}.coin-icon{display:inline-flex;align-items:center;justify-content:center;width:1.35em;height:1.35em;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff3a3 0 8%,#ffd84a 25%,#e7a900 65%,#a86b00 100%);border:2px solid #ffe477;box-shadow:0 1px 0 #8a5b00, inset 0 0 0 2px rgba(255,255,255,.25);color:#8a5b00;font-weight:1000;font-size:.85em;line-height:1;vertical-align:-.15em;text-shadow:0 1px rgba(255,255,255,.3)}
-</style><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="اختبر ذكاءك"><meta name="app-version" content="v.14-PWA-FIREBASE"><meta name="theme-color" content="#10152f"><style id="v13501-store-layout">
+</style><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="اختبر ذكاءك"><meta name="app-version" content="v.14.10-PWA-FIREBASE"><meta name="theme-color" content="#10152f"><style id="v13501-store-layout">
 .shopItem.row{display:flex;flex-direction:column;align-items:stretch;gap:10px;}
 .shopItem.row>div:first-child{width:100%;text-align:center;order:1;}
 .shopItem.row>button{order:2;align-self:center;width:min(220px,100%);margin:0;}
@@ -26,11 +26,11 @@ body{background:#07122a;}
 </head><body><div class="app">
 <div class="top"><div class="brand" aria-label="اختبر ذكاءك"></div><div class="wallet"><span class="coin-icon">$</span> <span id="coins">100</span> <span id="heartsDisplay" class="heart-display" aria-label="القلوب"></span><span id="heartTimer" style="display:none;margin-right:6px;color:#ffd84a;font-size:12px">⏳ <b id="heartCountdown">30:00</b></span></div></div>
 
-<section id="home" class="screen on"><div class="hero"><img class="brainImg" src="thinking_person.png" alt="شخص يفكر"><div class="heroVersion">v.14</div><div class="sub">كل يوم 20 سؤال جديد — وكل مستوى أصعب.</div></div>
+<section id="home" class="screen on"><div class="hero"><img class="brainImg" src="thinking_person.png" alt="شخص يفكر"><div class="heroVersion">v.14.10</div><div class="sub">كل يوم 20 سؤال جديد — وكل مستوى أصعب.</div></div>
 <div class="panel"><div style="display:flex;justify-content:space-between">المستوى <b id="level">1</b><span><b id="xp">0</b> / <b id="need">500</b> XP</span></div><div class="xpbar"><div id="xpbar"></div></div></div>
 <button class="btn green" onclick="normalStart()">🧠 اختبار فردي — أسئلة اليوم</button><button class="btn blue" onclick="dailyPage()">📅 التحدي اليومي</button><button class="btn purple" onclick="lobby()">👥 الجلسة — فريقين</button>
 <div class="v13hub">
-<div class="v13c"><h2>👤 حساب اللاعب</h2><div class="v13muted">تسجيل الدخول عبر Firebase Phone OTP متاح الآن، وبيانات اللاعب تتزامن تلقائيًا.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
+<div class="v13c"><h2>👤 <span id="homePlayerName">حساب اللاعب</span></h2><div class="v13muted">تسجيل الدخول عبر Firebase Phone OTP متاح الآن، وبيانات اللاعب تتزامن تلقائيًا.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
   <span style="font-weight:700;white-space:nowrap;">+966</span>
   <input id="v13Phone" type="tel" inputmode="numeric" autocomplete="tel-national"
          maxlength="9" pattern="5[0-9]{8}" placeholder="5XXXXXXXX"
@@ -44,7 +44,37 @@ body{background:#07122a;}
 <div class="grid"><button class="btn orange" onclick="profile()">👤 ملفي</button><button class="btn dark" onclick="achievements()">🏆 الإنجازات</button><button class="btn dark" onclick="shop()">🛒 المتجر</button><button class="btn dark" onclick="chestPage()">🎁 الصندوق</button></div>
 <div class="notice">📚 بنك V13.50 الحالي يحتوي على 5000 سؤال. كل جولة تضم 20 سؤالًا بدون تكرار داخل الجولة، مع منع إعادة آخر 50 سؤالًا.</div></section>
 
-<section id="profile" class="screen"><h2>👤 ملف اللاعب</h2><div class="panel" style="text-align:center"><div style="font-size:55px">🧠</div><h2 id="pLevel"></h2><p id="pTitle"></p><div class="xpbar"><div id="pBar"></div></div></div><div class="grid"><div class="tile"><b id="pCoins"></b><span><span class="coin-icon">$</span></span></div><div class="tile"><b id="pAch"></b><span>🏆 إنجازات</span></div><div class="tile"><b id="pCorrect"></b><span>صحيحة</span></div><div class="tile"><b id="pStreak"></b><span>🔥 Streak</span></div></div><button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
+<section id="profile" class="screen"><h2>👤 ملف اللاعب</h2>
+<div class="panel" style="text-align:center">
+  <div style="font-size:55px">🧠</div>
+  <h2 id="pNickname">اللاعب</h2>
+  <h2 id="pLevel"></h2><p id="pTitle"></p>
+  <div class="xpbar"><div id="pBar"></div></div>
+</div>
+<div class="panel">
+  <label for="nicknameInput"><b>🏷️ Nickname</b></label>
+  <input id="nicknameInput" class="field" maxlength="24" placeholder="اكتب اسم اللاعب">
+  <button class="btn blue" type="button" onclick="savePlayerNickname()">💾 حفظ Nickname</button>
+  <div id="nicknameMsg" class="muted"></div>
+</div>
+<div class="grid">
+  <div class="tile"><b id="pCoins"></b><span><span class="coin-icon">$</span></span></div>
+  <div class="tile"><b id="pAch"></b><span>🏆 إنجازات</span></div>
+  <div class="tile"><b id="pCorrect"></b><span>صحيحة</span></div>
+  <div class="tile"><b id="pStreak"></b><span>🔥 Streak</span></div>
+</div>
+<div class="grid">
+  <div class="tile"><b id="pTotalXP">0</b><span>Total XP</span></div>
+  <div class="tile"><b id="pWrong">0</b><span>خاطئة</span></div>
+  <div class="tile"><b id="pQuestions">0</b><span>الأسئلة</span></div>
+  <div class="tile"><b id="pGames">0</b><span>الألعاب</span></div>
+</div>
+<div class="panel">
+  <div><b>📱 رقم الجوال:</b> <span id="pPhone">—</span></div>
+  <div><b>📅 تاريخ التسجيل:</b> <span id="pRegistered">—</span></div>
+  <div><b>🏆 مدة الولاء:</b> <span id="pLoyalty">—</span></div>
+</div>
+<button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
 
 <section id="achievements" class="screen"><h2>🏆 الإنجازات</h2><div id="achList" class="list"></div><button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
 
@@ -146,7 +176,7 @@ function finishDaily(){let s=Math.min(100,Math.round(dScore/2)),reward=s>=90?250
 function fifty(){if(used50||!assistAvailable('hint'))return;let used=consumeAssist('hint');used50=true;let q=mode==='daily'?daily[di]:daily[idx%daily.length];[0,1,2,3].filter(n=>n!==q.x).sort(()=>Math.random()-.5).slice(0,2).forEach(n=>{let b=document.querySelectorAll('#answers .answer')[n];if(b){b.style.visibility='hidden';b.disabled=true}});save();assistText();}
 function plusTime(){if(usedTime||!assistAvailable('time'))return;consumeAssist('time');usedTime=true;time+=10;$('tm').textContent=time;save();assistText();}
 function skip(){if(usedSkip||!assistAvailable('skip'))return;consumeAssist('skip');usedSkip=true;clearInterval(timer);if(mode==='daily'){di++;di>=20?finishDaily():renderDaily()}else{idx++;idx>=20?finish():render()};save();}
-function profile(){$('pLevel').textContent='المستوى '+level;$('pTitle').textContent=titleForLevel(level);$('pCoins').textContent=coins;$('pAch').textContent=ach.length;$('pCorrect').textContent=correctTotal;$('pStreak').textContent=streak;$('pBar').style.width=xp/500*100+'%';go('profile')}
+function profile(){$('pLevel').textContent='المستوى '+level;$('pTitle').textContent=titleForLevel(level);$('pCoins').textContent=coins;$('pAch').textContent=ach.length;$('pCorrect').textContent=correctTotal;$('pStreak').textContent=streak;$('pBar').style.width=xp/500*100+'%';if($('pTotalXP'))$('pTotalXP').textContent=totalXP;if($('pWrong'))$('pWrong').textContent=wrongAnswersTotal;if($('pQuestions'))$('pQuestions').textContent=answered;if($('pGames'))$('pGames').textContent=gamesPlayed;if(window.V1410Profile)window.V1410Profile.render();go('profile')}
 function achievements(){let defs=[['first','🥇','البداية','إجابة صحيحة واحدة'],['ten','🎯','صائد الإجابات','10 إجابات صحيحة في اختبار'],['perfect','💯','علامة كاملة','20/20 صحيحة'],['hundred','📚','100 سؤال','أجب عن 100 سؤال'],['daily1','📅','مواظب','أكمل أول تحدي يومي'],['streak7','🔥','أسبوع نار','7 أيام متتالية'],['streak30','👑','شهر من الذكاء','30 يومًا متتاليًا'],['level5','⭐','المستوى 5','الوصول للمستوى 5'],['level10','📚','المستوى 10','الوصول للمستوى 10'],['level15','🎓','المستوى 15','الوصول للمستوى 15'],['level20','⭐','المستوى 20','الوصول للمستوى 20'],['level25','💎','المستوى 25','الوصول للمستوى 25'],['level30','🏆','المستوى 30','الوصول للمستوى 30']];$('achList').innerHTML=defs.map(d=>'<div class="row '+(ach.includes(d[0])?'':'claimed')+'"><span class="icon">'+d[1]+'</span><div style="flex:1"><b>'+d[2]+'</b><br><span class="muted">'+d[3]+'</span></div>'+(ach.includes(d[0])?'✅':'🔒')+'</div>').join('');go('achievements')}
 function shop(){$('shopCoins').textContent=coins;go('shop')}
 function buy(type){let cost=type==='heart'?100:type==='heartMax'?500:type==='time'?100:type==='hint'?75:250;if(coins<cost){alert('العملات غير كافية 🪙');return}if(type==='heartMax'){if(maxHearts>=10){alert('وصلت للحد الأقصى 10 قلوب ❤️');return}coins-=cost;maxHearts++;heartUnits=Math.min(maxHearts*3,heartUnits+3);hearts=Math.floor(heartUnits/3);save();alert('تم رفع الحد الأقصى للقلوب إلى '+maxHearts+' ❤️');return}if(type==='heart'){if(heartUnits>=maxHearts*3){alert('القلوب ممتلئة ❤️');return}coins-=cost;heartUnits=Math.min(maxHearts*3,heartUnits+3);hearts=Math.floor(heartUnits/3);save();alert('تمت إضافة قلب ❤️');return}coins-=cost;if(type==='hint'||type==='time')assist[type]=(assist[type]||0)+1;else boosts[type]=(boosts[type]||0)+1;save();alert('تم الشراء ✅')}
@@ -390,6 +420,8 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
         const result=await confirmationResult.confirm(code);
         firebaseUser=result.user;
         authMsg("🟢 تم تسجيل الدخول بنجاح برقم الجوال.");
+        if(window.V1410Profile) await window.V1410Profile.ensureRegistered();
+        if(window.V1410Profile) await window.V1410Profile.loadFromFirestore();
         await syncPlayerToFirestore();
       }catch(e){
         authMsg("🔴 فشل التحقق: "+friendlyError(e));
@@ -420,8 +452,9 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
       dailyScore:num(localStorage.getItem("dailyScore"),0),
       streak:num(localStorage.getItem("streak"),0),
       lastPlayed:localStorage.getItem("lastPlayed")||"",
+      nickname:localStorage.getItem("playerNickname")||"",
       updatedAt:firebase.firestore.FieldValue.serverTimestamp(),
-      playerSyncVersion:"v.14"
+      playerSyncVersion:"v.14.10"
     };
     await fbDb.collection("users").doc(firebaseUser.uid).set(payload,{merge:true});
     return true;
@@ -458,6 +491,10 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
       firebaseUser=user || null;
       if(user){
         authMsg("🟢 مسجل دخول: "+(user.phoneNumber || "Firebase user"));
+        try{
+          if(window.V1410Profile) await window.V1410Profile.ensureRegistered();
+          if(window.V1410Profile) await window.V1410Profile.loadFromFirestore();
+        }catch(e){console.warn("V14.10 account load:",e);}
         schedulePlayerSync();
       }
     });
@@ -491,13 +528,13 @@ if("serviceWorker" in navigator){
 .v13-firebase-status{margin-top:8px;font-size:13px;line-height:1.6}
 </style>
 
-<div id="v14PlayerSyncTestWrap"><button id="v14PlayerSyncTestBtn" type="button">🧪 اختبار Automatic Player Sync v.14</button><div id="v14PlayerSyncTestMsg" style="white-space:pre-wrap"></div></div><script>
-(function(){const b=document.getElementById("v14PlayerSyncTestBtn"),m=document.getElementById("v14PlayerSyncTestMsg");if(!b)return;b.onclick=async()=>{b.disabled=true;m.textContent="🟡 جاري اختبار Automatic Player Sync v.14...";try{const api=window.V14PlayerSync||window.V13Firebase;const u=api&&api.getUser?api.getUser():null;if(!u)throw Error("سجّل الدخول أولًا.");await api.flush();const db=api.getDb?api.getDb():null;if(!db)throw Error("Firestore غير مهيأ.");const snap=await db.collection("users").doc(u.uid).get();if(!snap.exists)throw Error("users/UID غير موجود.");const d=snap.data()||{};const fields=["level","xp","totalXP","coins","correctTotal","wrongAnswers","questionsAnswered","gamesPlayed","dailyScore","streak"];const bad=fields.filter(k=>!Number.isFinite(Number(d[k])));if(bad.length)throw Error("قيم غير صالحة: "+bad.join(", "));m.textContent="🟢 Automatic Player Sync v.14 ناجح.\nUID: "+u.uid+"\n\n"+fields.map(k=>k+": "+d[k]).join("\n")+"\n\nأي تغيير لاحق في القيم المحفوظة سيُزامن تلقائيًا.";}catch(e){m.textContent="🔴 فشل الاختبار:\n"+(e.message||e)}finally{b.disabled=false}}})();
+<div id="v14PlayerSyncTestWrap"><button id="v14PlayerSyncTestBtn" type="button">🧪 اختبار Automatic Player Sync v.14.10.10</button><div id="v14PlayerSyncTestMsg" style="white-space:pre-wrap"></div></div><script>
+(function(){const b=document.getElementById("v14PlayerSyncTestBtn"),m=document.getElementById("v14PlayerSyncTestMsg");if(!b)return;b.onclick=async()=>{b.disabled=true;m.textContent="🟡 جاري اختبار Automatic Player Sync v.14.10.10...";try{const api=window.V14PlayerSync||window.V13Firebase;const u=api&&api.getUser?api.getUser():null;if(!u)throw Error("سجّل الدخول أولًا.");await api.flush();const db=api.getDb?api.getDb():null;if(!db)throw Error("Firestore غير مهيأ.");const snap=await db.collection("users").doc(u.uid).get();if(!snap.exists)throw Error("users/UID غير موجود.");const d=snap.data()||{};const fields=["level","xp","totalXP","coins","correctTotal","wrongAnswers","questionsAnswered","gamesPlayed","dailyScore","streak"];const bad=fields.filter(k=>!Number.isFinite(Number(d[k])));if(bad.length)throw Error("قيم غير صالحة: "+bad.join(", "));m.textContent="🟢 Automatic Player Sync v.14.10.10 ناجح.\nUID: "+u.uid+"\n\n"+fields.map(k=>k+": "+d[k]).join("\n")+"\n\nأي تغيير لاحق في القيم المحفوظة سيُزامن تلقائيًا.";}catch(e){m.textContent="🔴 فشل الاختبار:\n"+(e.message||e)}finally{b.disabled=false}}})();
 </script>
 
 
 <div id="v1375PlayerSyncTest" style="margin:10px 0">
-<button id="v1375PlayerSyncTestBtn" type="button">🧪 اختبار Player Sync v.14</button>
+<button id="v1375PlayerSyncTestBtn" type="button">🧪 اختبار Player Sync v.14.10</button>
 <div id="v1375PlayerSyncTestMsg" style="white-space:pre-wrap;margin-top:8px"></div>
 </div>
 <script>
@@ -520,7 +557,7 @@ b.onclick=async()=>{
   const fields=["level","xp","totalXP","coins","correctTotal","wrongAnswers","questionsAnswered","gamesPlayed","dailyScore","streak"];
   const bad=fields.filter(k=>!Number.isFinite(Number(d[k])));
   if(bad.length) throw Error("قيم غير صالحة: "+bad.join(", "));
-  m.textContent="🟢 Player Sync v.14 ناجح.\nUID: "+u.uid+
+  m.textContent="🟢 Player Sync v.14.10 ناجح.\nUID: "+u.uid+
     "\n"+fields.map(k=>k+": "+d[k]).join("\n")+
     "\n\nتمت الكتابة والقراءة من Firestore بنجاح.";
  }catch(e){
@@ -528,6 +565,155 @@ b.onclick=async()=>{
   m.textContent="🔴 فشل Player Sync:\n"+(e.message||e);
  }finally{b.disabled=false;}
 };
+})();
+</script>
+
+
+<script id="v1410ProfileModule">
+(function(){
+  const VERSION="v.14.10";
+  const NICK_KEY="playerNickname";
+  const REG_KEY="playerRegisteredAt";
+
+  const el=id=>document.getElementById(id);
+  const currentUser=()=>{
+    try{return (window.V14PlayerSync&&V14PlayerSync.getUser&&V14PlayerSync.getUser()) ||
+      (window.V13Firebase&&V13Firebase.getUser&&V13Firebase.getUser()) ||
+      (window.firebase&&firebase.auth&&firebase.auth().currentUser) || null;}catch(e){return null;}
+  };
+  const getDb=()=>{
+    try{return (window.V14PlayerSync&&V14PlayerSync.getDb&&V14PlayerSync.getDb()) ||
+      (window.V13Firebase&&V13Firebase.getDb&&V13Firebase.getDb()) ||
+      (window.firebase&&firebase.firestore&&firebase.firestore()) || null;}catch(e){return null;}
+  };
+
+  function setName(n){
+    n=String(n||"").trim();
+    if(el("homePlayerName")) el("homePlayerName").textContent=n||"حساب اللاعب";
+    if(el("pNickname")) el("pNickname").textContent=n||"اللاعب";
+    if(el("nicknameInput") && document.activeElement!==el("nicknameInput")) el("nicknameInput").value=n;
+  }
+
+  function timestampToDate(v){
+    if(!v)return null;
+    if(v.toDate) return v.toDate();
+    const d=new Date(v);
+    return isNaN(d.getTime())?null:d;
+  }
+  function fmtDate(d){
+    if(!d)return "—";
+    try{return new Intl.DateTimeFormat("ar-SA",{year:"numeric",month:"long",day:"numeric"}).format(d);}catch(e){return d.toLocaleDateString();}
+  }
+  function loyaltyText(d){
+    if(!d)return "—";
+    const days=Math.max(0,Math.floor((Date.now()-d.getTime())/86400000));
+    if(days<30)return days+" يوم";
+    if(days<365)return Math.floor(days/30)+" شهر";
+    const y=Math.floor(days/365),m=Math.floor((days%365)/30);
+    return y+" سنة"+(m?" و "+m+" شهر":"");
+  }
+
+  async function ensureRegistered(){
+    const u=currentUser(),db=getDb();
+    if(!u||!db)return false;
+    const ref=db.collection("users").doc(u.uid);
+    const snap=await ref.get();
+    const d=snap.exists?(snap.data()||{}):{};
+    const patch={profileVersion:VERSION};
+    if(!d.registeredAt) patch.registeredAt=firebase.firestore.FieldValue.serverTimestamp();
+    if(!d.phoneNumber && u.phoneNumber) patch.phoneNumber=u.phoneNumber;
+    if(!d.nickname && localStorage.getItem(NICK_KEY)) patch.nickname=localStorage.getItem(NICK_KEY);
+    await ref.set(patch,{merge:true});
+    return true;
+  }
+
+  async function loadFromFirestore(){
+    const u=currentUser(),db=getDb();
+    if(!u||!db)return null;
+    const snap=await db.collection("users").doc(u.uid).get();
+    if(!snap.exists)return null;
+    const d=snap.data()||{};
+
+    // Account-owned game data: restore from Firebase when present.
+    const map={
+      coins:"coins", totalXP:"totalXP", correctTotal:"correctTotal",
+      wrongAnswers:"wrongAnswers", questionsAnswered:"answered",
+      gamesPlayed:"gamesPlayed", dailyScore:"dailyScore",
+      streak:"streak", lastPlayed:"lastPlayed"
+    };
+    Object.keys(map).forEach(k=>{
+      if(d[k]!==undefined && d[k]!==null) localStorage.setItem(map[k],String(d[k]));
+    });
+    if(d.nickname!==undefined){
+      localStorage.setItem(NICK_KEY,String(d.nickname||""));
+      setName(d.nickname||"");
+    }
+    const reg=timestampToDate(d.registeredAt);
+    if(reg)localStorage.setItem(REG_KEY,reg.toISOString());
+
+    // Update the active in-memory game variables carefully.
+    if(Number.isFinite(Number(d.coins))) coins=Number(d.coins);
+    if(Number.isFinite(Number(d.totalXP))){
+      totalXP=Number(d.totalXP);
+      level=Math.max(1,Math.floor(totalXP/500)+1);
+      xp=Math.max(0,totalXP-(level-1)*500);
+    }
+    if(Number.isFinite(Number(d.correctTotal))) correctTotal=Number(d.correctTotal);
+    if(Number.isFinite(Number(d.wrongAnswers))) wrongAnswersTotal=Number(d.wrongAnswers);
+    if(Number.isFinite(Number(d.questionsAnswered))) answered=Number(d.questionsAnswered);
+    if(Number.isFinite(Number(d.gamesPlayed))) gamesPlayed=Number(d.gamesPlayed);
+    if(Number.isFinite(Number(d.dailyScore))) dailyScore=Number(d.dailyScore);
+    if(Number.isFinite(Number(d.streak))) streak=Number(d.streak);
+    if(d.lastPlayed!==undefined) lastPlayed=String(d.lastPlayed||"");
+
+    if(typeof sync==="function")sync();
+    return d;
+  }
+
+  async function saveNickname(){
+    const input=el("nicknameInput"),msg=el("nicknameMsg");
+    const n=String(input?input.value:"").trim().replace(/\s+/g," ").slice(0,24);
+    if(n.length<2){if(msg)msg.textContent="اكتب Nickname من حرفين على الأقل.";return;}
+    localStorage.setItem(NICK_KEY,n); setName(n);
+    const u=currentUser(),db=getDb();
+    if(u&&db){
+      await db.collection("users").doc(u.uid).set({
+        nickname:n,
+        profileVersion:VERSION,
+        updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+      },{merge:true});
+      if(window.V14PlayerSync)window.V14PlayerSync.schedule();
+      if(msg)msg.textContent="🟢 تم حفظ Nickname.";
+    }else if(msg) msg.textContent="تم حفظ الاسم على الجهاز. سجّل الدخول لحفظه في حسابك.";
+  }
+
+  async function render(){
+    const n=localStorage.getItem(NICK_KEY)||""; setName(n);
+    const u=currentUser();
+    if(el("pPhone"))el("pPhone").textContent=u&&u.phoneNumber?u.phoneNumber:"غير مسجل";
+    let reg=timestampToDate(localStorage.getItem(REG_KEY));
+    if(u){
+      try{
+        const d=await loadFromFirestore();
+        if(d)reg=timestampToDate(d.registeredAt)||reg;
+      }catch(e){console.warn("V14.10 profile render:",e);}
+    }
+    if(el("pRegistered"))el("pRegistered").textContent=fmtDate(reg);
+    if(el("pLoyalty"))el("pLoyalty").textContent=loyaltyText(reg);
+  }
+
+  window.savePlayerNickname=()=>saveNickname().catch(e=>{
+    const m=el("nicknameMsg");if(m)m.textContent="تعذر حفظ Nickname: "+(e.message||e);
+  });
+  window.V1410Profile={ensureRegistered,loadFromFirestore,render,saveNickname};
+
+  document.addEventListener("DOMContentLoaded",()=>{
+    setName(localStorage.getItem(NICK_KEY)||"");
+    const phone=el("v13Phone");
+    if(phone){
+      phone.addEventListener("input",()=>{phone.value=String(phone.value||"").replace(/\D/g,"").slice(0,9);});
+    }
+  });
 })();
 </script>
 
