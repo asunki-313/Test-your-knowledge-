@@ -1,44 +1,82 @@
-<!doctype html><html lang="ar" dir="rtl"><head><script>window.APP_VERSION="v.14";</script><meta charset="utf-8">
+<!doctype html><html lang="ar" dir="rtl"><head><script>window.APP_VERSION="v.14.3";</script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080d2b"><title>اختبر ذكاءك V.13.50.3</title>
+<meta name="theme-color" content="#080d2b"><title>اختبر ذكاءك V.14.3</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#080d2b;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial}.app{max-width:540px;margin:auto;padding:15px;min-height:100vh}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:22px;font-weight:900;color:#ffc62e}.wallet{background:#151d4d;border:1px solid #3a467b;border-radius:20px;padding:8px}.screen{display:none}.on{display:block}.hero{text-align:center;padding:20px}.brain{font-size:65px}.brainImg{width:150px;height:150px;object-fit:contain;border-radius:24px;display:block;margin:0 auto 8px}.hero h1{color:#ffc62e;font-size:38px;margin:5px}.sub,.muted{color:#aeb7df}.btn{width:100%;padding:14px;margin:5px 0;border:0;border-radius:14px;font-size:17px;font-weight:900}.green{background:#34c759;color:white}.blue{background:#1976ff;color:white}.purple{background:#7b35d9;color:white}.orange{background:#f5a900}.dark{background:#151d4d;color:white;border:1px solid #3a467b}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.tile,.panel,.row{background:#11183d;border:1px solid #293462;border-radius:14px;padding:12px}.tile{text-align:center}.tile b{display:block;font-size:21px}.tile span{font-size:12px;color:#aeb7df}.xpbar{height:11px;background:#151d4d;border-radius:10px;overflow:hidden;margin-top:7px}.xpbar div{height:100%;background:#ffc62e;width:0}.notice{background:#11183d;border:1px solid #293462;border-radius:14px;padding:11px;margin:10px 0;color:#cbd2f3;font-size:13px}.list{display:grid;gap:8px}.row{display:flex;align-items:center;gap:10px}.icon{font-size:27px}.claimed{opacity:.45}.qhead{display:flex;justify-content:space-between}.timer{background:#14204b;padding:6px 10px;border-radius:18px}.progress{height:9px;background:#12183a;border-radius:9px;margin:10px 0 15px}.bar{height:100%;background:#35d06f;width:0}.card{background:#f6f7fb;color:#161a2d;border-radius:20px;padding:17px}.badge{display:inline-block;background:#7b35d9;color:white;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:900}.question{text-align:center;font-size:22px;font-weight:900;line-height:1.5;margin:15px 0}.answers{display:grid;gap:8px}.answer{background:white;color:#171a2c;border:2px solid #d4d7e2;border-radius:13px;padding:13px;font-size:17px;font-weight:800}.correct{background:#d9f8df!important;border-color:#27b94e!important}.wrong{background:#ffe0e0!important;border-color:#e74747!important}.tools{display:flex;gap:6px;margin-top:10px}.tools button{flex:1;background:#11183d;color:white;border:1px solid #3a467b;border-radius:10px;padding:9px;font-weight:900}.score{text-align:center;font-size:58px;color:#ffc62e;font-weight:1000}.shopItem{background:#11183d;border:1px solid #293462;border-radius:14px;padding:12px}.field{width:100%;padding:13px;border-radius:10px;border:1px solid #3a467b;background:#0b1131;color:white;font-size:16px} .heart-display{display:inline-flex;gap:1px;vertical-align:-.08em;margin:0 3px}.heart-piece{font-size:18px;line-height:1;background:linear-gradient(90deg,#ff3b4e var(--fill),#3a4268 var(--fill));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px #ff6b7a}.coin-icon{display:inline-flex;align-items:center;justify-content:center;width:1.35em;height:1.35em;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff3a3 0 8%,#ffd84a 25%,#e7a900 65%,#a86b00 100%);border:2px solid #ffe477;box-shadow:0 1px 0 #8a5b00, inset 0 0 0 2px rgba(255,255,255,.25);color:#8a5b00;font-weight:1000;font-size:.85em;line-height:1;vertical-align:-.15em;text-shadow:0 1px rgba(255,255,255,.3)}
-</style><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="اختبر ذكاءك"><meta name="app-version" content="v.14-PWA-FIREBASE"><meta name="theme-color" content="#10152f"><style id="v13501-store-layout">
+</style><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="اختبر ذكاءك"><meta name="app-version" content="v.14.3-PWA-FIREBASE"><meta name="theme-color" content="#10152f"><style id="v13501-store-layout">
 .shopItem.row{display:flex;flex-direction:column;align-items:stretch;gap:10px;}
 .shopItem.row>div:first-child{width:100%;text-align:center;order:1;}
 .shopItem.row>button{order:2;align-self:center;width:min(220px,100%);margin:0;}
 .shopItem.row .muted{display:block;margin-top:5px;line-height:1.5;}
 </style>
-<style id="v14-ui">
-body{background:#07122a;}
-.app{position:relative;overflow:hidden;background:#07122a;}
-.app:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background:
- radial-gradient(circle at 50% 30%,rgba(35,117,185,.22),transparent 42%),
- radial-gradient(circle at 10% 52%,rgba(24,80,145,.16),transparent 30%),
- radial-gradient(circle at 90% 62%,rgba(20,96,150,.14),transparent 32%);z-index:0;}
-.app:after{content:"التاريخ   •   علوم   •   رياضيات   •   تحدي   •   ذكاء   •   فضاء   •   منطق   •   اكتشف\A\A   E = mc²      a² + b² = c²      π      ∑      H₂O      DNA\A\A   🏛️        🔭        ⚗️        ⚛️        🌍        📐";white-space:pre-wrap;position:fixed;inset:90px 0 0 0;pointer-events:none;z-index:0;text-align:center;color:#72a8d4;font:700 20px/3.2 system-ui,sans-serif;letter-spacing:2px;word-spacing:10px;opacity:.09;transform:rotate(-3deg) scale(1.05);}
-.app>*{position:relative;z-index:1;}
-.top .brand{min-width:0;width:8px;overflow:hidden;opacity:0;}
-.hero{position:relative;background:transparent;}
-.heroVersion{font-weight:900;color:#ffc62e;font-size:20px;margin-top:8px;}
-#appVersion{display:none!important;}
+
+
+<style id="v143-exact-ui">
+*{box-sizing:border-box}
+body{background:#061127!important;color:#fff!important}
+.app{max-width:540px!important;margin:auto!important;padding:10px 14px 96px!important;min-height:100vh!important;position:relative!important;overflow:hidden!important;background:#061127!important}
+.app:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:#061127 url("background_v143.png") center 92px/100% auto no-repeat;opacity:1}
+.app:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,14,35,.20),rgba(3,14,35,.42) 55%,rgba(3,14,35,.72));}
+.app>*{position:relative;z-index:1}
+.top{height:76px!important;display:flex!important;justify-content:space-between!important;align-items:center!important;direction:ltr!important}
+.top .brand{display:block!important;opacity:1!important;overflow:visible!important;width:112px!important;min-width:112px!important;color:#ffbf2f!important;font-size:0!important;position:relative!important}
+.top .brand:before{content:"v.14.3";font-size:22px;font-weight:1000;color:#ffbf2f;position:absolute;right:0;top:-14px;white-space:nowrap}
+.top .brand:after{content:"🧠";font-size:26px;position:absolute;right:-42px;top:-18px}
+.wallet{background:rgba(6,24,55,.88)!important;border:1px solid #315987!important;border-radius:22px!important;padding:10px 13px!important;box-shadow:0 5px 18px rgba(0,0,0,.18)!important;min-width:265px;text-align:left;direction:ltr}
+.hero{padding:84px 0 22px!important;text-align:center!important;background:transparent!important}
+.hero .brainImg{width:205px!important;height:205px!important;object-fit:contain!important;border-radius:34px!important;display:block!important;margin:0 auto 12px!important;filter:drop-shadow(0 0 20px rgba(0,150,255,.25))}
+.heroVersion{font-weight:1000!important;color:#ffbf2f!important;font-size:31px!important;margin:4px 0 7px!important}
+.hero .sub{font-size:17px!important;color:#e5e7f5!important;text-shadow:0 2px 8px #000!important}
+#home>.panel{background:rgba(5,22,50,.90)!important;border:1px solid #2c5485!important;border-radius:20px!important;padding:15px 18px!important;margin:8px 0 12px!important}
+#home>.btn{height:74px!important;border-radius:21px!important;font-size:21px!important;margin:7px 0!important;position:relative!important;padding-left:72px!important;padding-right:60px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 5px 14px rgba(0,0,0,.20)!important}
+#home>.btn.green{background:linear-gradient(135deg,#25bd49,#35c95b)!important}
+#home>.btn.blue{background:linear-gradient(135deg,#0b70f7,#1e6ee9)!important}
+#home>.btn.purple{background:linear-gradient(135deg,#7130d5,#813de2)!important}
+#home>.btn:nth-of-type(1):before,#home>.btn:nth-of-type(2):before,#home>.btn:nth-of-type(3):before{content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;background-size:contain;background-repeat:no-repeat;background-position:center}
+#home>.btn:nth-of-type(1):before{background-image:url("ui_brain.png")}
+#home>.btn:nth-of-type(2):before{background-image:url("ui_calendar.png")}
+#home>.btn:nth-of-type(3):before{background-image:url("ui_group.png")}
+#home>.btn:after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-54%);font-size:46px;font-weight:300;line-height:1;color:#fff}
+.grid .tile{background:rgba(5,22,50,.88)!important;border:1px solid #294d7d!important;border-radius:18px!important}
+.v13hub{margin-top:12px!important}
+.v13c{background:rgba(5,22,50,.90)!important;border:1px solid #294d7d!important;border-radius:20px!important;padding:17px!important;position:relative!important;overflow:hidden!important}
+.v13c:first-child{min-height:255px!important;padding:22px 105px!important;text-align:center!important}
+.v13c:first-child:before{content:"";position:absolute;left:25px;top:35px;width:84px;height:84px;background:url("ui_user.png") center/contain no-repeat}
+.v13c:first-child:after{content:"";position:absolute;right:20px;top:29px;width:88px;height:95px;background:url("ui_shield.png") center/contain no-repeat}
+.v13c:first-child h2{font-size:25px!important;margin:4px 0 12px!important}
+.v13c:first-child .v13muted{font-size:15px!important;line-height:1.65!important}
+.v13b{background:linear-gradient(180deg,#eef2fa,#cdd5e6)!important;color:#1470d2!important;border-radius:13px!important;padding:12px 18px!important;font-size:16px!important;font-weight:900!important}
+.v13c:first-child #v13OpenAuth{display:none!important}
+.v13c:nth-child(2),.v13c:nth-child(3),.v13c:nth-child(4){display:none!important}
+.notice{background:rgba(5,22,50,.88)!important;border-color:#294d7d!important}
+#appVersion{display:none!important}
+/* Hide the old 4-tile home grid from the reference layout */
+#home>.grid:first-of-type{display:none!important}
+#home>.grid:nth-of-type(2){display:none!important}
+#home>.notice{display:none!important}
+.v143-nav{position:fixed;z-index:99990;left:50%;bottom:8px;transform:translateX(-50%);width:min(510px,calc(100vw - 22px));height:76px;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(4,19,46,.94);border:1px solid #1e4777;border-radius:24px;box-shadow:0 8px 28px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.07);backdrop-filter:blur(12px);overflow:hidden}
+.v143-nav button{border:0;background:transparent;color:#e6edf8;font:800 11px/1.15 system-ui,sans-serif;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.v143-nav button.active{background:linear-gradient(180deg,rgba(22,151,84,.30),rgba(3,55,40,.82));border:1px solid rgba(21,208,107,.55);border-radius:20px;color:#42df69}
+.v143-nav img{width:34px;height:34px;object-fit:contain}
+.v143-nav .nav-label{white-space:nowrap}
+@media(max-width:380px){.hero{padding-top:70px!important}.hero .brainImg{width:180px!important;height:180px!important}.heroVersion{font-size:27px!important}#home>.btn{font-size:19px!important}}
 </style>
 </head><body><div class="app">
 <div class="top"><div class="brand" aria-label="اختبر ذكاءك"></div><div class="wallet"><span class="coin-icon">$</span> <span id="coins">100</span> <span id="heartsDisplay" class="heart-display" aria-label="القلوب"></span><span id="heartTimer" style="display:none;margin-right:6px;color:#ffd84a;font-size:12px">⏳ <b id="heartCountdown">30:00</b></span></div></div>
 
-<section id="home" class="screen on"><div class="hero"><img class="brainImg" src="thinking_person.png" alt="شخص يفكر"><div class="heroVersion">v.14</div><div class="sub">كل يوم 20 سؤال جديد — وكل مستوى أصعب.</div></div>
+<section id="home" class="screen on"><div class="hero"><img class="brainImg" src="thinking_person.png" alt="شخص يفكر"><div class="heroVersion">v.14.3</div><div class="sub">كل يوم 20 سؤال جديد — وكل مستوى أصعب.</div></div>
 <div class="panel"><div style="display:flex;justify-content:space-between">المستوى <b id="level">1</b><span><b id="xp">0</b> / <b id="need">500</b> XP</span></div><div class="xpbar"><div id="xpbar"></div></div></div>
-<button class="btn green" onclick="normalStart()">🧠 اختبار فردي — أسئلة اليوم</button><button class="btn blue" onclick="dailyPage()">📅 التحدي اليومي</button><button class="btn purple" onclick="lobby()">👥 الجلسة — فريقين</button>
+<button class="btn green" onclick="normalStart()">اختبار فردي — أسئلة اليوم</button><button class="btn blue" onclick="dailyPage()">التحدي اليومي</button><button class="btn purple" onclick="lobby()">الجلسة — فريقين</button>
 <div class="v13hub">
-<div class="v13c"><h2>👤 حساب اللاعب</h2><div class="v13muted">تسجيل الدخول عبر Firebase Phone OTP متاح الآن، وبيانات اللاعب تتزامن تلقائيًا.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
+<div class="v13c"><h2>حساب اللاعب</h2><div class="v13muted">تسجيل الدخول عبر Firebase Phone OTP متاح الآن، وبيانات اللاعب تتزامن تلقائيًا.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
   <span style="font-weight:700;white-space:nowrap;">+966</span>
   <input id="v13Phone" type="tel" inputmode="numeric" autocomplete="tel-national"
          maxlength="9" pattern="5[0-9]{8}" placeholder="5XXXXXXXX"
          aria-label="رقم الجوال السعودي">
 </div><button class="v13b" id="v13Send">إرسال OTP</button><div id="v13OtpBox" style="display:none"><input id="v13Otp" class="v13i" inputmode="numeric" maxlength="6" placeholder="رمز التحقق"><button class="v13b" id="v13Verify">تحقق</button></div><div id="v13Msg" class="v13muted"></div></div></div>
-<div class="v13c"><h2>🎁 الصندوق اليومي</h2><p>المكافأة المعتادة <b>100 Coins</b>، مع فرصة محدودة للحصول على <b>200 Coins</b>.</p><button class="v13b" id="v13Chest">فتح الصندوق 🎁</button><div id="v13ChestMsg">🎁 الصندوق جاهز</div><div id="v13Streak" class="v13muted"></div></div>
-<div class="v13c"><h2>🏆 Leaderboard</h2><div class="leaderPrize">🥇 اكسب <b>500 ريال شهريًا</b> للمركز الأول</div><p class="v13muted">الترتيب الحقيقي سيتم ربطه بـFirebase في المرحلة التالية.</p><div class="v13tabs"><button class="v13tab active">🌎 عالمي</button><button class="v13tab">🇸🇦 السعودية</button><button class="v13tab">👥 الأصدقاء</button></div></div>
-<div class="v13c"><h2>📖 تعليمات اللعبة</h2><p class="v13muted">اعرف طريقة اللعب، نظام القلوب، XP، العملات الذهبية، والوقت.</p><button class="v13b" onclick="go('instructions')">📖 فتح التعليمات</button></div>
+<div class="v13c"><h2>الصندوق اليومي</h2><p>المكافأة المعتادة <b>100 Coins</b>، مع فرصة محدودة للحصول على <b>200 Coins</b>.</p><button class="v13b" id="v13Chest">فتح الصندوق 🎁</button><div id="v13ChestMsg">🎁 الصندوق جاهز</div><div id="v13Streak" class="v13muted"></div></div>
+<div class="v13c"><h2>Leaderboard</h2><div class="leaderPrize">🥇 اكسب <b>500 ريال شهريًا</b> للمركز الأول</div><p class="v13muted">الترتيب الحقيقي سيتم ربطه بـFirebase في المرحلة التالية.</p><div class="v13tabs"><button class="v13tab active">🌎 عالمي</button><button class="v13tab">🇸🇦 السعودية</button><button class="v13tab">👥 الأصدقاء</button></div></div>
+<div class="v13c"><h2>تعليمات اللعبة</h2><p class="v13muted">اعرف طريقة اللعب، نظام القلوب، XP، العملات الذهبية، والوقت.</p><button class="v13b" onclick="go('instructions')">📖 فتح التعليمات</button></div>
 </div>
 <div class="grid"><div class="tile"><b id="best">0</b><span>أفضل نتيجة</span></div><div class="tile"><b id="streak">0</b><span>🔥 Streak</span></div><div class="tile"><b id="acc">0%</b><span>الدقة</span></div><div class="tile"><b id="ans">0</b><span>الأسئلة</span></div></div>
 <div class="grid"><button class="btn orange" onclick="profile()">👤 ملفي</button><button class="btn dark" onclick="achievements()">🏆 الإنجازات</button><button class="btn dark" onclick="shop()">🛒 المتجر</button><button class="btn dark" onclick="chestPage()">🎁 الصندوق</button></div>
@@ -79,9 +117,9 @@ body{background:#07122a;}
 
 <section id="result" class="screen"><div style="text-align:center;padding-top:20px"><div style="font-size:65px">🏆</div><div id="score" class="score"></div><h3 id="rank"></h3><p id="resultText"></p><div class="grid"><div class="tile"><b id="rc">0</b><span>صحيح</span></div><div class="tile"><b id="rw">0</b><span>خطأ</span></div><div class="tile"><b id="reward">0</b><span><span class="coin-icon">$</span></span></div><div class="tile"><b id="rxp">0</b><span>XP</span></div></div><button class="btn green" onclick="normalStart()">إعادة الاختبار</button><button class="btn dark" onclick="go('home')">الرئيسية</button></div></section>
 
-<section id="daily" class="screen"><h2>📅 التحدي اليومي</h2><div class="panel"><h3 id="dDate"></h3><p>20 سؤالًا، والصعوبة تناسب مستواك.</p><b>مكافأة تصل إلى 250 <span class="coin-icon">$</span></b></div><button id="dBtn" class="btn blue" onclick="dailyStart()">ابدأ تحدي اليوم</button><button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
+<section id="daily" class="screen"><h2>التحدي اليومي</h2><div class="panel"><h3 id="dDate"></h3><p>20 سؤالًا، والصعوبة تناسب مستواك.</p><b>مكافأة تصل إلى 250 <span class="coin-icon">$</span></b></div><button id="dBtn" class="btn blue" onclick="dailyStart()">ابدأ تحدي اليوم</button><button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
 
-<section id="lobby" class="screen"><h2>👥 الجلسة — فريقين</h2><div class="panel"><p>اللعب حاليًا على نفس الجهاز.</p><label>الفريق الأول</label><input id="ta" class="field" value="الفريق الأزرق"><label>الفريق الثاني</label><input id="tb" class="field" value="الفريق الأحمر"><button class="btn purple" onclick="sessionStart()">ابدأ الجلسة 🎮</button></div><button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
+<section id="lobby" class="screen"><h2>الجلسة — فريقين</h2><div class="panel"><p>اللعب حاليًا على نفس الجهاز.</p><label>الفريق الأول</label><input id="ta" class="field" value="الفريق الأزرق"><label>الفريق الثاني</label><input id="tb" class="field" value="الفريق الأحمر"><button class="btn purple" onclick="sessionStart()">ابدأ الجلسة 🎮</button></div><button class="btn dark" onclick="go('home')">← الرئيسية</button></section>
 <section id="session" class="screen"><h2>🎮 الجلسة</h2><div class="grid"><div class="tile"><span id="na"></span><b id="sa">0</b></div><div class="tile"><span id="nb"></span><b id="sb">0</b></div></div><div class="panel"><b id="turn"></b><div id="sq" class="question"></div><div id="sanswers" class="answers"></div></div></section>
 </div>
 <script>
@@ -188,7 +226,7 @@ sync();
 </style>
 <style>.leaderPrize{margin:10px 0;padding:10px;border:1px solid #ffc62e;background:#201c08;color:#ffd84a;border-radius:12px;font-weight:900}.heart-display{display:inline-flex;gap:1px;vertical-align:-.08em;margin:0 3px}.heart-piece{font-size:18px;line-height:1;background:linear-gradient(90deg,#ff3b4e var(--fill),#3a4268 var(--fill));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px #ff6b7a}.coin-icon{display:inline-flex;width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;background:linear-gradient(145deg,#ffe88a,#d99b00);color:#6b4300;font-weight:1000;border:2px solid #fff1a8;box-shadow:0 1px 5px #0008}</style>
 <script>
-window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeatWithinRound:true,answerTime:15,activeBank:"v.14",maxHearts:10,heartSegments:3,heartRegenMinutes:30,freeAssistCooldownHours:24};
+window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeatWithinRound:true,answerTime:15,activeBank:"v.14.3",maxHearts:10,heartSegments:3,heartRegenMinutes:30,freeAssistCooldownHours:24};
 (function(){
  const key="v13_daily"; const today=()=>new Date().toISOString().slice(0,10);
  const load=()=>{try{return JSON.parse(localStorage.getItem(key)||"{}")}catch(e){return {}}};
@@ -202,7 +240,7 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
  const verify=document.getElementById("v13Verify"); if(verify)verify.onclick=()=>document.getElementById("v13Msg").textContent="Firebase غير مربوط في V13 بعد — لم يتم تسجيل الدخول.";
 })();
 </script>
-<section id="instructions" class="screen"><div class="panel"><h2>📖 تعليمات اللعبة</h2><div class="notice"><b>🧠 الاختبار الفردي</b><br>20 سؤالًا، و15 ثانية لكل سؤال.</div><div class="notice"><b>❤️ القلوب</b><br>عند نفاد القلوب، يعود قلب واحد كل 30 دقيقة، حتى الحد الأقصى.</div><div class="notice"><b>🆘 المساعدات</b><br>50:50، +10 ثواني، وتجنب السؤال: لكل مساعدة استخدام مجاني يتجدد بعد 24 ساعة. المساعدات المشتراة تبقى حتى نفاد الرصيد.</div><div class="notice"><b>⭐ XP</b><br>الإجابة الصحيحة تكسب XP، والإجابة الخاطئة أو انتهاء الوقت لا تُحسب صحيحة.</div><div class="notice"><b><span class="coin-icon">$</span> العملات</b><br>العملة الذهبية هي العملة المستخدمة في المتجر والمكافآت.</div><button class="btn dark" onclick="go('home')">العودة للرئيسية</button></div></section>
+<section id="instructions" class="screen"><div class="panel"><h2>تعليمات اللعبة</h2><div class="notice"><b>🧠 الاختبار الفردي</b><br>20 سؤالًا، و15 ثانية لكل سؤال.</div><div class="notice"><b>❤️ القلوب</b><br>عند نفاد القلوب، يعود قلب واحد كل 30 دقيقة، حتى الحد الأقصى.</div><div class="notice"><b>🆘 المساعدات</b><br>50:50، +10 ثواني، وتجنب السؤال: لكل مساعدة استخدام مجاني يتجدد بعد 24 ساعة. المساعدات المشتراة تبقى حتى نفاد الرصيد.</div><div class="notice"><b>⭐ XP</b><br>الإجابة الصحيحة تكسب XP، والإجابة الخاطئة أو انتهاء الوقت لا تُحسب صحيحة.</div><div class="notice"><b><span class="coin-icon">$</span> العملات</b><br>العملة الذهبية هي العملة المستخدمة في المتجر والمكافآت.</div><button class="btn dark" onclick="go('home')">العودة للرئيسية</button></div></section>
 
 
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
@@ -421,7 +459,7 @@ window.V13_CONFIG={version:"13.50",questionCount:5000,noRepeatWindow:50,noRepeat
       streak:num(localStorage.getItem("streak"),0),
       lastPlayed:localStorage.getItem("lastPlayed")||"",
       updatedAt:firebase.firestore.FieldValue.serverTimestamp(),
-      playerSyncVersion:"v.14"
+      playerSyncVersion:"v.14.3"
     };
     await fbDb.collection("users").doc(firebaseUser.uid).set(payload,{merge:true});
     return true;
@@ -531,4 +569,12 @@ b.onclick=async()=>{
 })();
 </script>
 
+
+<nav class="v143-nav" aria-label="التنقل الرئيسي">
+<button type="button" onclick="go('daily')"><img src="ui_calendar_nav.png"><span class="nav-label">المهام اليومية</span></button>
+<button type="button" onclick="go('achievements')"><img src="ui_trophy_nav.png"><span class="nav-label">الإنجازات</span></button>
+<button type="button" class="active" onclick="go('home')"><img src="ui_play_nav.png"><span class="nav-label">اللعب</span></button>
+<button type="button" onclick="go('shop')"><img src="ui_cart_nav.png"><span class="nav-label">المتجر</span></button>
+<button type="button" onclick="go('profile')"><img src="ui_user_nav.png"><span class="nav-label">الملف الشخصي</span></button>
+</nav>
 </body></html>
