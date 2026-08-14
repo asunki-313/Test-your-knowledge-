@@ -1,0 +1,8 @@
+V.15.8 PWA
+Question bank: 3,500 questions.
+Categories: 30 approved categories.
+Correct-answer position distribution: 875 / 875 / 875 / 875.
+Question repeat rule: a played question is kept out of the next 100 played questions across normal, daily, and team session modes.
+Daily challenge: 20 hard/expert questions, selected from 20 different categories whenever available, without recent repeats.
+Question QA: exact question uniqueness, 4 unique choices per question, valid correct index, category coverage, hard-question coverage across all 30 categories, and balanced answer positions.
+Build version identifiers: V.15.8.
