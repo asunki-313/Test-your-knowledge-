@@ -1,0 +1,11 @@
+V.15.5 PWA
+Base: V.15.0 PWA built from approved V14.20.
+Question bank: 1,500 questions.
+Answer option positions randomized for every question.
+Correct-answer position distribution:
+- Option 1: 375
+- Option 2: 375
+- Option 3: 375
+- Option 4: 375
+Question text, answer content, correct answers, categories, difficulty, 100-question no-repeat rule,
+and daily challenge rules preserved.
