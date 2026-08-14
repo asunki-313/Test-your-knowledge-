@@ -1,4 +1,4 @@
-const CACHE_NAME="v14.16-pwa";
+const CACHE_NAME="v14.20-pwa";
 const APP_SHELL=["./","./index.html","./manifest.webmanifest","./thinking_person.png"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL).catch(()=>{})));});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
