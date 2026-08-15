@@ -1,4 +1,4 @@
-const CACHE_NAME="ikhtabr-v15-95-pwa";
+const CACHE_NAME="ikhtabr-v15-96-pwa";
 const APP_SHELL=["./","./index.html","./manifest.webmanifest","./thinking_person.png","./quiz_background_v1415.png","./data/questions_cumulative_3500.json"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL).catch(()=>{})));});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});

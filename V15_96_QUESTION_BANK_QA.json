@@ -1,0 +1,14 @@
+{
+  "count": 3500,
+  "uniqueNormalizedQuestions": 3500,
+  "duplicateNormalizedQuestionCount": 0,
+  "badFourOptionQuestions": 0,
+  "badCorrectIndexQuestions": 0,
+  "correctPositionDistribution": {
+    "1": 875,
+    "0": 875,
+    "2": 875,
+    "3": 875
+  },
+  "categoryCount": 30
+}

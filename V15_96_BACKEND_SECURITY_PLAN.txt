@@ -1,0 +1,24 @@
+V.15.96 HARDENING — BACKEND ITEMS REQUIRED BEFORE CASH PRIZES
+
+1. XP / Leaderboard anti-cheat:
+   Client-side code cannot securely prove XP. Move authoritative XP awards to a trusted backend
+   (Cloud Functions/Admin SDK) before real-money prizes. Use immutable event IDs and transactions.
+
+2. Monthly winners:
+   At month close, trusted backend should snapshot top 5 into monthly_winners/YYYY-MM,
+   including uid, nickname-at-close, verified monthlyXP, rank, prize amount, closedAt.
+   Then the new month uses a new monthlyKey. Do not trust a client clock for prize settlement.
+
+3. Nickname:
+   Enforce the 30-day rename cooldown server-side too. Store nicknameUpdatedAt on the user document.
+
+4. OTP:
+   Real SMS delivery depends on Firebase Authentication project settings, SMS region policy,
+   quotas/billing and anti-abuse controls. This build improves UX only; it cannot override Firebase.
+
+5. Friends:
+   Validate friend relationships server-side if Friends leaderboard becomes competitive/rewarded.
+
+6. App Store release:
+   Remove/hide Automatic Player Sync test UI only after testing. Keep safe error telemetry,
+   privacy disclosure, account deletion flow, and production Firebase rules.

@@ -1,0 +1,32 @@
+{
+  "branch": "V.15.96 experimental",
+  "baseUntouched": "V.15.8 zip was read-only",
+  "javascriptSyntax": "PASS",
+  "safeErrorLogging": "IMPLEMENTED",
+  "monthlyLocalArchive": "IMPLEMENTED",
+  "xpIdempotencyLedger": "IMPLEMENTED for awardXPOnce API",
+  "offlineSyncQueue": "IMPLEMENTED generic queue",
+  "nickname30DayPolicy": "IMPLEMENTED client helper; server enforcement required",
+  "guestAccountMerge": "IMPLEMENTED merge helper",
+  "otp60SecondCooldown": "IMPLEMENTED UX guard",
+  "storageMigration": "IMPLEMENTED additive schema v3",
+  "automaticPlayerSync": "KEPT VISIBLE",
+  "debugFirebaseButtons": "remain hidden from prior V.15.96 build",
+  "questionQA": {
+    "count": 3500,
+    "uniqueNormalizedQuestions": 3500,
+    "duplicateNormalizedQuestionCount": 0,
+    "badFourOptionQuestions": 0,
+    "badCorrectIndexQuestions": 0,
+    "correctPositionDistribution": {
+      "1": 875,
+      "0": 875,
+      "2": 875,
+      "3": 875
+    },
+    "categoryCount": 30
+  },
+  "serverAntiCheat": "DESIGN PROVIDED; requires trusted backend deployment",
+  "monthlyWinnerAuthoritativeArchive": "DESIGN PROVIDED; requires trusted backend deployment",
+  "status": "PASS WITH BACKEND ITEMS CLEARLY FLAGGED"
+}

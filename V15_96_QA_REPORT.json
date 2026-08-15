@@ -1,0 +1,32 @@
+{
+  "version": "V.15.96",
+  "questions": 3500,
+  "uniqueQuestions": 3500,
+  "categories": 30,
+  "answerPositions": {
+    "A": 875,
+    "B": 875,
+    "C": 875,
+    "D": 875
+  },
+  "javascriptSyntax": "PASS",
+  "oldVersionTokenScan": "PASS",
+  "leaderboard": [
+    "All Time",
+    "Monthly",
+    "Friends"
+  ],
+  "monthlyPrizesSAR": [
+    500,
+    250,
+    100,
+    50,
+    50
+  ],
+  "automaticPlayerSync": "VISIBLE",
+  "firebaseTestUI": "HIDDEN",
+  "otpCooldown": "60 seconds",
+  "hardeningFeatures": "INCLUDED",
+  "backendAntiCheat": "REQUIRES TRUSTED BACKEND BEFORE CASH PRIZES",
+  "status": "PASS"
+}

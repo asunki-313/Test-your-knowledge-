@@ -1,0 +1,21 @@
+V.15.96 PWA TEST BUILD
+
+Included:
+- 3500-question bank / 30 categories.
+- Leaderboard: All Time / Monthly / Friends.
+- Monthly prizes: 500 / 250 / 100 / 50 / 50 SAR.
+- Monthly XP rollover logic.
+- Automatic Player Sync remains visible.
+- Firebase connectivity/debug UI hidden.
+- +966 on the left; Saudi local mobile field centered and starts with 5.
+- OTP 60-second resend cooldown UX.
+- Safe local error logging.
+- Offline sync queue helper.
+- XP event idempotency helper.
+- Nickname cooldown helper.
+- Guest/sign-in progress merge helper.
+- Additive storage schema migration.
+- Proposed Firebase rules and backend security plan retained.
+
+Important:
+Real anti-cheat for cash-prize XP and authoritative monthly-winner settlement require trusted backend enforcement before real prizes.

@@ -1,0 +1,26 @@
+// V.15.96 TEST — proposed Firestore hardening.
+// Deploy only after reviewing against your current Firebase schema.
+// Critical rule: clients may read leaderboard-safe fields, but prize finalization
+// and authoritative XP should ultimately be written by trusted backend code.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn(){ return request.auth != null; }
+    function owner(uid){ return signedIn() && request.auth.uid == uid; }
+
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow create: if owner(uid);
+      allow update: if owner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['nickname','level','xp','totalXP','coins','streak','lastPlayed',
+                    'monthlyXP','monthlyKey','updatedAt','playerSyncVersion','friends']);
+      allow delete: if false;
+    }
+
+    match /monthly_winners/{month} {
+      allow read: if true;
+      allow write: if false; // trusted backend/Admin SDK only
+    }
+  }
+}
