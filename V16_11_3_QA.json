@@ -1,0 +1,8 @@
+{
+  "version": "V.16.11.3 PWA",
+  "base": "V.16.11.2 PWA",
+  "leaderboardPrizeText": "💵 1500 ريال شهريًا للمراكز الخمسة الأولى 💵",
+  "leaderboardPrizeColor": "#ffd84a",
+  "leaderboardPrizeCentered": true,
+  "javascriptSyntax": "PASS"
+}
