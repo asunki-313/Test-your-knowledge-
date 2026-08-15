@@ -170,56 +170,44 @@ body{padding-bottom:94px!important}
 @media(max-width:430px){.battleTeamNames{grid-template-columns:1fr}}
 </style>
 
-<style id="v1611-instructions-position-fix">
-#instructions.screen.on {
-  padding-top: max(10px, env(safe-area-inset-top)) !important;
-  margin-top: 0 !important;
-  min-height: auto !important;
-  align-content: start !important;
-  justify-content: flex-start !important;
-}
-#instructions.screen.on > *:first-child {
-  margin-top: 0 !important;
-}
-#instructions.screen.on .panel:first-of-type {
-  margin-top: 8px !important;
-}
-</style>
-
-
-<style id="v1611-instructions-real-fix">
-/* V.16.11: Instructions page ONLY. Home page intentionally untouched. */
-#instructions.screen,
-#instructions.screen.on {
-  display: none !important;
-  position: relative !important;
-  top: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  min-height: 0 !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding-top: 8px !important;
-  align-items: initial !important;
-  align-content: initial !important;
-  justify-content: initial !important;
-  place-items: initial !important;
-  place-content: initial !important;
-}
-#instructions.screen.on {
-  display: block !important;
-}
-#instructions.screen.on::before {
-  display: none !important;
-  content: none !important;
-}
-#instructions.screen.on > :first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-</style>
-
 <meta name="application-name" content="اختبر ذكاءك V.16.11 Beta-1">
+
+<style id="v1611-prize-phone-css">
+.v1611-prize-phone-card{margin-top:12px;padding:12px;border:1px solid #303b67;border-radius:14px;background:#101735}
+.v1611-prize-phone-card .field{width:100%;box-sizing:border-box;text-align:center;direction:ltr}
+.v1611-prize-phone-card .btn{margin-top:8px;width:100%}
+</style>
+
+<style id="v1611-instructions-final-fix">
+#instructions.screen{
+  display:none !important;
+}
+#instructions.screen.on{
+  display:block !important;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:6200 !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  background:var(--bg,#07142e) !important;
+  padding:
+    max(16px, env(safe-area-inset-top))
+    16px
+    calc(110px + env(safe-area-inset-bottom))
+    16px !important;
+  margin:0 !important;
+  min-height:100dvh !important;
+  height:100dvh !important;
+  transform:none !important;
+  align-items:initial !important;
+  justify-content:initial !important;
+}
+#instructions.screen.on > .panel:first-child{
+  margin:0 auto !important;
+  max-width:760px !important;
+}
+</style>
+
 </head><body><div class="app">
 <div class="top"><div class="brand" aria-label="اختبر ذكاءك"></div><div class="wallet"><span class="coin-icon">$</span> <span id="coins">100</span> <span id="heartsDisplay" class="heart-display" aria-label="القلوب"></span><span id="heartTimer" style="display:none;margin-right:6px;color:#ffd84a;font-size:12px">⏳ <b id="heartCountdown">30:00</b></span></div></div>
 
@@ -239,7 +227,7 @@ body{padding-bottom:94px!important}
   </button>
   <div id="v1611GoogleAuthMsg" class="v13muted" style="margin-top:10px"></div>
 </div>
-<button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
+<button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
   <span class="v1611-country-code">+966</span>
   <button class="v13b" id="v13Send">إرسال OTP</button><div id="v13OtpBox" style="display:none"></div><div id="v13Msg" class="v13muted"></div></div></div>
 <div class="v13c"><h2>🎁 الصندوق اليومي</h2><p>المكافأة المعتادة <b>100 Coins</b>، مع فرصة محدودة للحصول على <b>200 Coins</b>.</p><button class="v13b" id="v13Chest">فتح الصندوق 🎁</button><div id="v13ChestMsg">🎁 الصندوق جاهز</div><div id="v13Streak" class="v13muted"></div></div>
@@ -315,7 +303,16 @@ body{padding-bottom:94px!important}
     <button id="payStc" class="v1611-pay" type="button" onclick="V1611Profile.setPay('STC Bank')">STC Bank</button>
     <button id="payBarq" class="v1611-pay" type="button" onclick="V1611Profile.setPay('Barq')">Barq</button>
   </div>
-  <p class="muted">عند الفوز بأحد المراكز الخمسة الأولى الشهرية، سوف يتم تحويل مبلغ الجائزة إلى وسيلة الدفع المختارة والمرتبطة برقم الجوال المسجل في اللعبة.</p><div id="v1611PayStatus" class="muted"></div>
+  <p class="muted">عند الفوز بأحد المراكز الخمسة الأولى الشهرية، سوف يتم تحويل مبلغ الجائزة إلى وسيلة الدفع المختارة والمرتبطة برقم الجوال المسجل في اللعبة.
+<div class="v1611-prize-phone-card">
+  <label for="v1611PrizePhone"><b>📱 رقم الجوال لاستلام الجائزة</b></label>
+  <div class="v13muted" style="margin:6px 0 10px">
+    🔒 خصوصية عالية جدًا: هذا الرقم مخصص لاستلام الجوائز فقط، ولا يظهر في Leaderboard أو الملف العام أو لأي لاعب آخر.
+  </div>
+  <input id="v1611PrizePhone" class="field" inputmode="numeric" maxlength="10" placeholder="05XXXXXXXX">
+  <button id="v1611PrizePhoneSave" class="btn" type="button" onclick="V1611PrizePhone.save()">حفظ رقم الجوال</button>
+  <div id="v1611PrizePhoneMsg" class="v13muted" style="margin-top:7px"></div>
+</div></p><div id="v1611PayStatus" class="muted"></div>
 </div>
 <div class="v1611-profile-card">
   <h3>🎂 تاريخ الميلاد <small>(اختياري)</small> <span class="v1611-reward">+100 Coin 🪙</span></h3>
@@ -409,7 +406,15 @@ const $=x=>document.getElementById(x);
 const coinHTML=()=>'<span class=\"coin-icon\">$</span>';
 const titleForLevel=l=>l<=5?'🧠 مبتدئ':l<=10?'📚 متعلم':l<=15?'🎓 متقدم':l<=20?'⭐ خبير':l<=25?'💎 محترف':l<=30?'🏆 عبقري':l<=35?'🔥 أسطورة':l<=40?'👑 عبقري أسطوري':l<=45?'⚡ سيد المعرفة':'🌟 أسطورة المعرفة';
 function today(){let d=new Date();return d.toISOString().slice(0,10)}
-function goRaw(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');sync()}
+function goRaw(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  $(id).classList.add('on');
+  sync();
+  if(id==='instructions'){
+    const instructions=document.getElementById('instructions');
+    if(instructions) instructions.scrollTop=0;
+  }
+}
 function go(id){
   const gameOn=document.getElementById('game')&&document.getElementById('game').classList.contains('on');
   if(gameOn && id!=='game' && window.V1611ExitPolicy && V1611ExitPolicy.isActive() && !V1611ExitPolicy.isInternalNavigation()){
@@ -1690,6 +1695,122 @@ document.addEventListener("DOMContentLoaded",async()=>{
 });
 
 window.V1611GoogleAuth={signIn,signOut};
+})();
+</script>
+
+
+<script id="v1611-prize-phone-js">
+(function(){
+"use strict";
+const KEY="v1611_prize_phone";
+const CHANGED_AT="v1611_prize_phone_changed_at";
+const LOCK_MS=30*24*60*60*1000;
+const E=id=>document.getElementById(id);
+
+function remainingMs(){
+  const t=Number(localStorage.getItem(CHANGED_AT)||0);
+  return t ? Math.max(0,(t+LOCK_MS)-Date.now()) : 0;
+}
+function remainingDays(){
+  return Math.ceil(remainingMs()/(24*60*60*1000));
+}
+function normalize(v){
+  return String(v||"").replace(/\D/g,"");
+}
+function valid(v){
+  return /^05\d{8}$/.test(v);
+}
+
+async function syncPrivate(phone, changedAt){
+  try{
+    const u=firebase.auth().currentUser;
+    const db=firebase.firestore();
+    if(!u||!db)return;
+
+    await db.collection("users").doc(u.uid).set({
+      prizePhone:phone,
+      prizePhoneChangedAt:firebase.firestore.Timestamp.fromMillis(changedAt),
+      prizePhonePrivate:true,
+      updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+    },{merge:true});
+  }catch(e){
+    console.warn("V.16.11 prize phone sync",e);
+  }
+}
+
+function render(){
+  const input=E("v1611PrizePhone");
+  const btn=E("v1611PrizePhoneSave");
+  const msg=E("v1611PrizePhoneMsg");
+  if(!input||!btn||!msg)return;
+
+  const phone=localStorage.getItem(KEY)||"";
+  const rem=remainingMs();
+
+  if(phone) input.value=phone;
+
+  input.disabled=rem>0;
+  btn.disabled=rem>0;
+
+  if(phone && rem>0){
+    msg.textContent="🔒 الرقم مقفل. متاح التغيير بعد "+remainingDays()+" يوم.";
+  }else if(phone){
+    msg.textContent="🟢 يمكنك تغيير رقم الجوال الآن.";
+  }else{
+    msg.textContent="أضف رقم سعودي بصيغة 05XXXXXXXX.";
+  }
+}
+
+async function save(){
+  const input=E("v1611PrizePhone");
+  const msg=E("v1611PrizePhoneMsg");
+
+  if(remainingMs()>0){
+    render();
+    return;
+  }
+
+  const phone=normalize(input?.value);
+  if(!valid(phone)){
+    if(msg)msg.textContent="اكتب رقم سعودي صحيح بصيغة 05XXXXXXXX.";
+    return;
+  }
+
+  const ok=confirm(
+    "تنبيه\n\n"+
+    "رقم الجوال المضاف لاستلام الجائزة مفروض عليه خصوصية عالية جدًا.\n"+
+    "بعد الحفظ أو أي تغيير لن تتمكن من تغيير الرقم لمدة 30 يوم.\n\n"+
+    "تأكيد الرقم: "+phone+" ؟"
+  );
+  if(!ok)return;
+
+  const changedAt=Date.now();
+  localStorage.setItem(KEY,phone);
+  localStorage.setItem(CHANGED_AT,String(changedAt));
+
+  await syncPrivate(phone,changedAt);
+  render();
+
+  alert(
+    "✅ تم حفظ رقم الجوال لاستلام الجائزة.\n"+
+    "🔒 لن تتمكن من تغييره لمدة 30 يوم."
+  );
+}
+
+document.addEventListener("DOMContentLoaded",render);
+
+const profile=E("profile");
+if(profile){
+  new MutationObserver(()=>{
+    if(profile.classList.contains("on"))render();
+  }).observe(profile,{attributes:true,attributeFilter:["class"]});
+}
+
+setInterval(()=>{
+  if(E("profile")?.classList.contains("on"))render();
+},60000);
+
+window.V1611PrizePhone={save,render,remainingMs};
 })();
 </script>
 
