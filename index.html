@@ -227,13 +227,7 @@ body{padding-bottom:94px!important}
 <div class="panel"><div style="display:flex;justify-content:space-between">المستوى <b id="level">1</b><span><b id="xp">0</b> / <b id="need">500</b> XP</span></div><div class="xpbar"><div id="xpbar"></div></div></div>
 <button class="btn green" onclick="normalStart()">🧠 اختبار فردي — أسئلة اليوم</button><button class="btn blue" onclick="dailyPage()">📅 التحدي اليومي</button><button class="btn purple" onclick="lobby()">⚔️ معركة العلم<br><small>فريق ضد فريق</small></button>
 <div class="v13hub">
-<div class="v13c" id="v1610GoogleAuthCard">
-<h2 id="v1610GoogleUserTitle">👤 تسجيل الدخول</h2>
-<p class="v13muted">سجّل الدخول بحساب Google، وبيانات اللاعب تتزامن تلقائيًا مع حسابك.</p>
-<button id="v1610GoogleSignInBtn" class="v13b" type="button" onclick="V1610GoogleAuth.signIn()">🔵 متابعة باستخدام Google</button>
-<button id="v1610GoogleSignOutBtn" class="v13b" type="button" style="display:none;margin-top:8px" onclick="V1610GoogleAuth.signOut()">تسجيل الخروج</button>
-<div id="v1610GoogleAuthMsg" class="v13muted" style="margin-top:10px"></div>
-</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
+<div class="v13c"><h2>👤 <span id="homePlayerName">حساب اللاعب</span></h2><div class="v13muted">تسجيل الدخول عبر Firebase Phone OTP متاح الآن، وبيانات اللاعب تتزامن تلقائيًا.</div><button class="v13b" id="fbTestOpen" type="button">🔥 اختبار اتصال Firebase</button><div id="fbTestBox" style="display:none;margin-top:10px"><textarea id="fbConfig" class="v13i" style="min-height:150px;width:100%;direction:ltr;text-align:left" placeholder="الصق هنا كائن firebaseConfig من Firebase Console"></textarea><button class="v13b" id="fbTestBtn" type="button">اختبار الاتصال الآن</button><div id="fbTestMsg" class="v13muted" style="margin-top:8px"></div></div><button class="v13b" id="v13OpenAuth">📱 تسجيل برقم الجوال</button><div id="v13Auth" style="display:none;margin-top:10px"><div id="saudiPhoneInputWrap" style="display:flex;align-items:center;gap:8px;width:100%;">
   <span class="v1610-country-code">+966</span>
   <input id="v13Phone" type="tel" inputmode="numeric" autocomplete="tel-national"
          maxlength="9" pattern="5[0-9]{8}" placeholder="5XXXXXXXX"
@@ -312,13 +306,7 @@ body{padding-bottom:94px!important}
     <button id="payStc" class="v1610-pay" type="button" onclick="V1610Profile.setPay('STC Bank')">STC Bank</button>
     <button id="payBarq" class="v1610-pay" type="button" onclick="V1610Profile.setPay('Barq')">Barq</button>
   </div>
-  <p class="muted">عند الفوز بأحد المراكز الخمسة الأولى الشهرية، سوف يتم تحويل مبلغ الجائزة إلى وسيلة الدفع المختارة ورقم الجوال المخصص لاستلام الجائزة.
-<div class="v13muted" style="margin-top:8px">🔒 رقم الجوال المضاف للدفع مفروض عليه خصوصية عالية جدًا، ولا يظهر في Leaderboard أو الملف العام.</div>
-<div style="margin-top:10px">
-<input id="v1610PrizePhone" class="field" inputmode="numeric" maxlength="10" placeholder="05XXXXXXXX">
-<button id="v1610PrizePhoneSave" class="btn" type="button" onclick="V1610PrizePhone.save()">حفظ رقم الجوال</button>
-<div id="v1610PrizePhoneMsg" class="v13muted" style="margin-top:6px"></div>
-</div></p><div id="v1610PayStatus" class="muted"></div>
+  <p class="muted">عند الفوز بأحد المراكز الخمسة الأولى الشهرية، سوف يتم تحويل مبلغ الجائزة إلى وسيلة الدفع المختارة والمرتبطة برقم الجوال المسجل في اللعبة.</p><div id="v1610PayStatus" class="muted"></div>
 </div>
 <div class="v1610-profile-card">
   <h3>🎂 تاريخ الميلاد <small>(اختياري)</small> <span class="v1610-reward">+100 Coin 🪙</span></h3>
@@ -1358,7 +1346,23 @@ window.V1610Release={version:"V.16.10",debugUI:false,automaticPlayerSyncVisible:
 </script>
 
 
-
+<script id="v1610-otp-ux">
+(function(){
+  const btn=document.getElementById("v13SendOtp");
+  if(!btn)return;
+  const originalText=btn.textContent;
+  function paint(){
+    const n=window.V1610OTP?V1610OTP.remaining():0;
+    if(n>0){btn.disabled=true;btn.textContent="إعادة الإرسال بعد "+n+"ث"}
+    else{btn.disabled=false;btn.textContent=originalText}
+  }
+  btn.addEventListener("click",function(){
+    /* Starts after user requests OTP; Firebase errors still surface through existing flow. */
+    if(window.V1610OTP && V1610OTP.canSend()){V1610OTP.startCooldown(60);paint()}
+  },true);
+  setInterval(paint,1000);paint();
+})();
+</script>
 
 
 <div id="v1610ExitOverlay" role="dialog" aria-modal="true" aria-labelledby="v1610ExitTitle">
@@ -1623,78 +1627,4 @@ window.V1610Profile={setPay,saveBirthday,render,remainingPayLock};
 </style>
 <div id="v1610BetaBadge">V.16.10 • Beta-1</div>
 
-
-<script id="v1610-google-auth-js">
-(function(){
-"use strict";
-const E=id=>document.getElementById(id);
-const A=()=>{try{return firebase.auth()}catch(_){return null}};
-const D=()=>{try{return firebase.firestore()}catch(_){return null}};
-const M=t=>{const e=E("v1610GoogleAuthMsg");if(e)e.textContent=t||""};
-
-async function ensureDoc(u){
- const db=D();if(!db||!u)return;
- const ref=db.collection("users").doc(u.uid),snap=await ref.get();
- const base={uid:u.uid,email:u.email||"",displayName:u.displayName||"",photoURL:u.photoURL||"",authProvider:"google",updatedAt:firebase.firestore.FieldValue.serverTimestamp()};
- if(!snap.exists)base.createdAt=firebase.firestore.FieldValue.serverTimestamp();
- await ref.set(base,{merge:true});
-}
-function render(u){
- const t=E("v1610GoogleUserTitle"),i=E("v1610GoogleSignInBtn"),o=E("v1610GoogleSignOutBtn");
- if(u){if(t)t.textContent=(u.displayName||u.email||"Player")+" 👤";if(i)i.style.display="none";if(o)o.style.display="block";M("🟢 متصل بحساب Google: "+(u.email||""))}
- else{if(t)t.textContent="👤 تسجيل الدخول";if(i)i.style.display="block";if(o)o.style.display="none";M("")}
-}
-async function signIn(){
- const a=A();if(!a){M("تعذر تهيئة Firebase Authentication.");return}
- const p=new firebase.auth.GoogleAuthProvider();p.setCustomParameters({prompt:"select_account"});
- try{
-   M("جاري فتح تسجيل الدخول بحساب Google...");
-   try{
-     const r=await a.signInWithPopup(p);
-     if(r&&r.user)await ensureDoc(r.user);
-   }catch(e){
-     const c=String(e&&e.code||"");
-     if(c.includes("popup")||/iPhone|iPad|iPod/i.test(navigator.userAgent)){await a.signInWithRedirect(p);return}
-     throw e;
-   }
- }catch(e){console.warn("V.16.10 Google sign-in",e);M("🔴 فشل تسجيل الدخول: "+(e.message||e))}
-}
-async function signOut(){const a=A();if(a)await a.signOut()}
-document.addEventListener("DOMContentLoaded",async()=>{
- const a=A();if(!a)return;
- try{const r=await a.getRedirectResult();if(r&&r.user)await ensureDoc(r.user)}catch(e){console.warn(e)}
- a.onAuthStateChanged(async u=>{render(u||null);if(u){try{await ensureDoc(u);if(window.V14PlayerSync)V14PlayerSync.schedule()}catch(e){console.warn(e)}}});
-});
-window.V1610GoogleAuth={signIn,signOut};
-})();
-</script>
-
-<script id="v1610-prize-phone-js">
-(function(){
-"use strict";
-const K="v1610_prize_phone",T="v1610_prize_phone_changed_at",LOCK=30*24*60*60*1000,E=id=>document.getElementById(id);
-const rem=()=>{const t=Number(localStorage.getItem(T)||0);return t?Math.max(0,t+LOCK-Date.now()):0};
-const days=()=>Math.ceil(rem()/86400000);
-function render(){
- const i=E("v1610PrizePhone"),b=E("v1610PrizePhoneSave"),m=E("v1610PrizePhoneMsg");if(!i||!b||!m)return;
- const p=localStorage.getItem(K)||"",r=rem();if(p)i.value=p;i.disabled=r>0;b.disabled=r>0;
- m.textContent=p&&r>0?"🔒 رقم الجوال مقفل. متاح التغيير بعد "+days()+" يوم.":p?"🟢 يمكنك تغيير رقم الجوال الآن.":"أضف رقم الجوال المستخدم لاستلام الجائزة.";
-}
-async function save(){
- const i=E("v1610PrizePhone"),m=E("v1610PrizePhoneMsg");if(rem()>0){render();return}
- const p=String(i?.value||"").replace(/\D/g,"");
- if(!/^05\d{8}$/.test(p)){if(m)m.textContent="اكتب رقم سعودي صحيح بصيغة 05XXXXXXXX.";return}
- if(!confirm("تنبيه\\n\\nرقم الجوال المضاف للدفع مفروض عليه خصوصية عالية جدًا.\\nبعد الحفظ لا يمكن تغيير الرقم لمدة 30 يوم.\\n\\nتأكيد الرقم: "+p+" ؟"))return;
- const at=Date.now();localStorage.setItem(K,p);localStorage.setItem(T,String(at));
- try{
-  const u=firebase.auth().currentUser,db=firebase.firestore();
-  if(u&&db)await db.collection("users").doc(u.uid).set({prizePhone:p,prizePhoneChangedAt:firebase.firestore.Timestamp.fromMillis(at),prizePhonePrivate:true,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});
- }catch(e){console.warn("V.16.10 prize phone",e)}
- render();alert("✅ تم حفظ رقم الجوال لاستلام الجائزة.\\n🔒 لن تتمكن من تغييره لمدة 30 يوم.");
-}
-document.addEventListener("DOMContentLoaded",render);
-const p=E("profile");if(p)new MutationObserver(()=>{if(p.classList.contains("on"))render()}).observe(p,{attributes:true,attributeFilter:["class"]});
-window.V1610PrizePhone={save,render};
-})();
-</script>
 </body></html>
