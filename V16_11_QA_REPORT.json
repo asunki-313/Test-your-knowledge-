@@ -1,0 +1,16 @@
+{
+  "version": "V.16.11",
+  "base": "V.16.10 Beta",
+  "change": "Phone + OTP replaced by Google Login only",
+  "otherGameSystems": "UNCHANGED",
+  "questions": 3500,
+  "answerDistribution": {
+    "A": 875,
+    "B": 875,
+    "C": 875,
+    "D": 875
+  },
+  "automaticPlayerSync": "VISIBLE",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}

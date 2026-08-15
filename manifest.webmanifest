@@ -1,13 +1,13 @@
 {
-  "name": "اختبر ذكاءك V.16.10 Beta-1",
-  "short_name": "اختبر ذكاءك V16.10",
+  "name": "اختبر ذكاءك V.16.11",
+  "short_name": "اختبر ذكاءك V16.11",
   "lang": "ar-SA",
   "dir": "rtl",
-  "start_url": "./?v=16.10-beta1",
+  "start_url": "./?v=16.11",
   "display": "standalone",
   "background_color": "#07122a",
   "theme_color": "#10152f",
-  "description": "اختبر ذكاءك V.16.10 PWA — Beta-1 لاختبارات المستخدم الحقيقي",
+  "description": "اختبر ذكاءك V.16.11 PWA — Google Login",
   "icons": [
     {
       "src": "thinking_person.png",
@@ -16,6 +16,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "16.10",
-  "id": "./?v=16.10-beta1"
+  "version": "16.11",
+  "id": "./?v=16.11"
 }
