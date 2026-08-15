@@ -1,0 +1,9 @@
+{
+  "version": "V.15.12 PWA",
+  "instructionsBackgroundRestored": true,
+  "instructionsTopFixRetained": true,
+  "googleButtonCentered": true,
+  "leaderboardText": "💵 1500 ريال شهريًا للمراكز الخمسة الأولى 💵",
+  "battleImage": "./battle-knowledge.png?v=1512",
+  "javascriptSyntax": "PASS"
+}
