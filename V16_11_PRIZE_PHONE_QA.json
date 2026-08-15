@@ -1,0 +1,15 @@
+{
+  "version": "V.16.11",
+  "change": "Added private prize-delivery phone only",
+  "prizePhone": {
+    "format": "05XXXXXXXX",
+    "lockDays": 30,
+    "privacy": "HIGH"
+  },
+  "STCBankBarq": "UNCHANGED",
+  "googleLogin": "RETAINED",
+  "questions": 3500,
+  "automaticPlayerSync": "VISIBLE",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}
