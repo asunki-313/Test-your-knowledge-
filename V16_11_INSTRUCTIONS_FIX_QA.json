@@ -1,0 +1,9 @@
+{
+  "version": "V.16.11",
+  "fix": "Instructions page opens at top",
+  "homePage": "UNCHANGED",
+  "googleLogin": "RETAINED",
+  "prizePhone": "RETAINED",
+  "STCBarq": "UNCHANGED",
+  "javascriptSyntax": "PASS"
+}

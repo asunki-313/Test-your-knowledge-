@@ -424,7 +424,18 @@ const $=x=>document.getElementById(x);
 const coinHTML=()=>'<span class=\"coin-icon\">$</span>';
 const titleForLevel=l=>l<=5?'🧠 مبتدئ':l<=10?'📚 متعلم':l<=15?'🎓 متقدم':l<=20?'⭐ خبير':l<=25?'💎 محترف':l<=30?'🏆 عبقري':l<=35?'🔥 أسطورة':l<=40?'👑 عبقري أسطوري':l<=45?'⚡ سيد المعرفة':'🌟 أسطورة المعرفة';
 function today(){let d=new Date();return d.toISOString().slice(0,10)}
-function goRaw(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');sync()}
+function goRaw(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  $(id).classList.add('on');
+  sync();
+  if(id==='instructions'){
+    requestAnimationFrame(()=>{
+      window.scrollTo({top:0,left:0,behavior:'auto'});
+      document.documentElement.scrollTop=0;
+      document.body.scrollTop=0;
+    });
+  }
+}
 function go(id){
   const gameOn=document.getElementById('game')&&document.getElementById('game').classList.contains('on');
   if(gameOn && id!=='game' && window.V1611ExitPolicy && V1611ExitPolicy.isActive() && !V1611ExitPolicy.isInternalNavigation()){
