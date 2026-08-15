@@ -1,0 +1,17 @@
+{
+  "version": "V.15.99",
+  "questions": 3500,
+  "instructionsPlacement": "PASS",
+  "prizePayment": [
+    "STC Bank",
+    "Barq"
+  ],
+  "birthday": {
+    "optional": true,
+    "rewardCoins": 100,
+    "lockedAfterSave": true
+  },
+  "battleArtwork": "APPROVED IMAGE INSTALLED",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}
