@@ -1,0 +1,13 @@
+{
+  "version": "V.15.99",
+  "instructionsScreenId": "instructions",
+  "instructionsPageTopGap": "FIXED",
+  "homePage": "UNCHANGED",
+  "homeFab": "RETAINED",
+  "battleImageFix": "RETAINED",
+  "STCBankBarq": "RETAINED",
+  "birthday100CoinLock": "RETAINED",
+  "automaticPlayerSync": "RETAINED",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}

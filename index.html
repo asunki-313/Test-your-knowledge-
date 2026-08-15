@@ -169,6 +169,23 @@ body{padding-bottom:94px!important}
 .v1599-reward{white-space:nowrap;color:#ffd84a;font-weight:1000}
 @media(max-width:430px){.battleTeamNames{grid-template-columns:1fr}}
 </style>
+
+<style id="v1599-instructions-position-fix">
+#instructions.screen.on {
+  padding-top: max(10px, env(safe-area-inset-top)) !important;
+  margin-top: 0 !important;
+  min-height: auto !important;
+  align-content: start !important;
+  justify-content: flex-start !important;
+}
+#instructions.screen.on > *:first-child {
+  margin-top: 0 !important;
+}
+#instructions.screen.on .panel:first-of-type {
+  margin-top: 8px !important;
+}
+</style>
+
 </head><body><div class="app">
 <div class="top"><div class="brand" aria-label="اختبر ذكاءك"></div><div class="wallet"><span class="coin-icon">$</span> <span id="coins">100</span> <span id="heartsDisplay" class="heart-display" aria-label="القلوب"></span><span id="heartTimer" style="display:none;margin-right:6px;color:#ffd84a;font-size:12px">⏳ <b id="heartCountdown">30:00</b></span></div></div>
 
@@ -306,7 +323,7 @@ body{padding-bottom:94px!important}
 <h2>⚔️ معركة العلم</h2><div class="v13muted" style="text-align:center">فريق ضد فريق</div>
 <div class="panel">
 <div class="battleArtworkWrap">
-<img src="./assets/battle_of_knowledge_v1599.png" class="battleArtwork" alt="معركة العلم: خمسة أبطال باللون الأزرق مقابل خمسة أبطال باللون الأحمر">
+<img src="assets/battle_of_knowledge_v1599.png?v=1599-imagefix1" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=new URL('assets/battle_of_knowledge_v1599.png?v=1599-imagefix1',document.baseURI).href}" class="battleArtwork" alt="معركة العلم: خمسة أبطال باللون الأزرق مقابل خمسة أبطال باللون الأحمر">
 </div>
 <div class="battleTeamNames">
 <input id="ta" class="field" placeholder="اسم الفريق الأزرق" value="الفريق الأزرق">
@@ -1428,23 +1445,6 @@ function refresh(){let id=document.querySelector('.screen.on')?.id||'';let ingam
 document.addEventListener('DOMContentLoaded',()=>{x()?.addEventListener('click',()=>{let id=document.querySelector('.screen.on')?.id;if(id==='session'){if(confirm('أفا متأكد طالع/ه ؟👀')){clearInterval(sessionClock);go('home')}}else if(window.V1599ExitPolicy&&V1599ExitPolicy.isActive())V1599ExitPolicy.requestExit('home');else go('home')});h()?.addEventListener('click',()=>go('home'));document.querySelectorAll('.screen').forEach(e=>new MutationObserver(refresh).observe(e,{attributes:true,attributeFilter:['class']}));refresh()});
 })();
 </script>
-
-<script id="v1599-instructions-js">
-document.addEventListener("click",function(e){
-  const b=e.target.closest("button");
-  if(!b)return;
-  const txt=(b.textContent||"").trim();
-  if(txt.includes("فتح التعليمات")){
-    setTimeout(()=>{
-      const candidates=[...document.querySelectorAll(".panel,details,.card,section,div")];
-      const box=candidates.find(x=>x!==b && (x.textContent||"").includes("تعليمات") && x.offsetParent!==null && x.getBoundingClientRect().top>b.getBoundingClientRect().top);
-      if(box) box.scrollIntoView({behavior:"smooth",block:"start"});
-      else window.scrollTo({top:0,behavior:"smooth"});
-    },80);
-  }
-});
-</script>
-
 
 <script id="v1599-profile-js">
 (function(){

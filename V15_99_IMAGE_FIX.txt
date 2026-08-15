@@ -1,0 +1,8 @@
+V.15.99 IMAGE-ONLY FIX
+- Fixed Battle of Knowledge image URL for GitHub Pages.
+- Added cache-busting to avoid stale PWA image references.
+- Added one-time document-base fallback if image loading fails.
+- Added image to PWA cache path.
+- No Home button/UI/gameplay/profile/instructions logic changed.
+- Version remains V.15.99.
+- JavaScript syntax: PASS
