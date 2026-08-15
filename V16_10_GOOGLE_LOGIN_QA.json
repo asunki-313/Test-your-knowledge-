@@ -1,0 +1,9 @@
+{
+  "version": "V.16.10",
+  "auth": "Google",
+  "phoneOtpUi": "REPLACED",
+  "prizePhoneLockDays": 30,
+  "questions": 3500,
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}
