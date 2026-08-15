@@ -1,0 +1,10 @@
+{
+  "version": "V.16.11",
+  "change": "Removed stale phone registration button only",
+  "googleLogin": "RETAINED",
+  "prizePhone": "RETAINED",
+  "stcBankBarq": "RETAINED",
+  "automaticPlayerSync": "VISIBLE",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}
