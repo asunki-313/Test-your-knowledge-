@@ -186,6 +186,39 @@ body{padding-bottom:94px!important}
 }
 </style>
 
+
+<style id="v1599-instructions-real-fix">
+/* V.15.99: Instructions page ONLY. Home page intentionally untouched. */
+#instructions.screen,
+#instructions.screen.on {
+  display: none !important;
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding-top: 8px !important;
+  align-items: initial !important;
+  align-content: initial !important;
+  justify-content: initial !important;
+  place-items: initial !important;
+  place-content: initial !important;
+}
+#instructions.screen.on {
+  display: block !important;
+}
+#instructions.screen.on::before {
+  display: none !important;
+  content: none !important;
+}
+#instructions.screen.on > :first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+</style>
+
 </head><body><div class="app">
 <div class="top"><div class="brand" aria-label="اختبر ذكاءك"></div><div class="wallet"><span class="coin-icon">$</span> <span id="coins">100</span> <span id="heartsDisplay" class="heart-display" aria-label="القلوب"></span><span id="heartTimer" style="display:none;margin-right:6px;color:#ffd84a;font-size:12px">⏳ <b id="heartCountdown">30:00</b></span></div></div>
 
@@ -272,7 +305,7 @@ body{padding-bottom:94px!important}
     <button id="payStc" class="v1599-pay" type="button" onclick="V1599Profile.setPay('STC Bank')">STC Bank</button>
     <button id="payBarq" class="v1599-pay" type="button" onclick="V1599Profile.setPay('Barq')">Barq</button>
   </div>
-  <p class="muted">عند الفوز بأحد المراكز الخمسة الأولى الشهرية، سوف يتم تحويل مبلغ الجائزة إلى وسيلة الدفع المختارة والمرتبطة برقم الجوال المسجل في اللعبة.</p>
+  <p class="muted">عند الفوز بأحد المراكز الخمسة الأولى الشهرية، سوف يتم تحويل مبلغ الجائزة إلى وسيلة الدفع المختارة والمرتبطة برقم الجوال المسجل في اللعبة.</p><div id="v1599PayStatus" class="muted"></div>
 </div>
 <div class="v1599-profile-card">
   <h3>🎂 تاريخ الميلاد <small>(اختياري)</small> <span class="v1599-reward">+100 Coin 🪙</span></h3>
@@ -1446,43 +1479,141 @@ document.addEventListener('DOMContentLoaded',()=>{x()?.addEventListener('click',
 })();
 </script>
 
+
 <script id="v1599-profile-js">
 (function(){
 "use strict";
 const E=id=>document.getElementById(id);
-const PAY="v1599_prize_payment", DOB="v1599_birthdate", DOB_REWARD="v1599_birthdate_rewarded";
+const PAY="v1599_prize_payment";
+const PAY_AT="v1599_prize_payment_changed_at";
+const PAY_LOCK_MS=15*24*60*60*1000;
+const DOB="v1599_birthdate";
+const DOB_REWARD="v1599_birthdate_rewarded";
+
+function remainingPayLock(){
+  const t=Number(localStorage.getItem(PAY_AT)||0);
+  return t ? Math.max(0, (t+PAY_LOCK_MS)-Date.now()) : 0;
+}
+function lockText(ms){
+  if(ms<=0)return "";
+  const days=Math.ceil(ms/(24*60*60*1000));
+  return "🔒 لا يمكن تغيير وسيلة استلام الجائزة الآن. متاح التغيير بعد "+days+" يوم.";
+}
 function render(){
- const pay=localStorage.getItem(PAY)||"";
- ["payStc","payBarq"].forEach(id=>E(id)?.classList.remove("active"));
- if(pay==="STC Bank")E("payStc")?.classList.add("active");
- if(pay==="Barq")E("payBarq")?.classList.add("active");
- const dob=localStorage.getItem(DOB), input=E("v1599Birthday"), btn=E("v1599BirthdaySave"), msg=E("v1599BirthdayMsg");
- if(dob&&input){input.value=dob;input.disabled=true;if(btn)btn.disabled=true;if(msg)msg.textContent="🔒 تم حفظ تاريخ الميلاد ولا يمكن تغييره."}
+  const pay=localStorage.getItem(PAY)||"";
+  const rem=remainingPayLock();
+
+  ["payStc","payBarq"].forEach(id=>{
+    const b=E(id);
+    if(!b)return;
+    b.classList.remove("active");
+    b.disabled=rem>0;
+  });
+
+  if(pay==="STC Bank")E("payStc")?.classList.add("active");
+  if(pay==="Barq")E("payBarq")?.classList.add("active");
+
+  let status=E("v1599PayStatus");
+  if(status){
+    if(pay && rem>0) status.textContent=lockText(rem);
+    else if(pay) status.textContent="🟢 يمكنك تغيير وسيلة الاستلام الآن.";
+    else status.textContent="اختر وسيلة استلام الجائزة.";
+  }
+
+  const dob=localStorage.getItem(DOB), input=E("v1599Birthday"), btn=E("v1599BirthdaySave"), msg=E("v1599BirthdayMsg");
+  if(dob&&input){
+    input.value=dob;input.disabled=true;
+    if(btn)btn.disabled=true;
+    if(msg)msg.textContent="🔒 تم حفظ تاريخ الميلاد ولا يمكن تغييره.";
+  }
 }
+
 async function syncProfile(fields){
- try{
-  const u=(typeof firebase!=="undefined"&&firebase.auth)?firebase.auth().currentUser:null;
-  const db=(typeof firebase!=="undefined"&&firebase.firestore)?firebase.firestore():null;
-  if(u&&db)await db.collection("users").doc(u.uid).set({...fields,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});
- }catch(e){console.warn("V.15.99 profile sync",e)}
+  try{
+    const u=(typeof firebase!=="undefined"&&firebase.auth)?firebase.auth().currentUser:null;
+    const db=(typeof firebase!=="undefined"&&firebase.firestore)?firebase.firestore():null;
+    if(u&&db){
+      await db.collection("users").doc(u.uid).set({
+        ...fields,
+        updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+      },{merge:true});
+    }
+  }catch(e){console.warn("V.15.99 profile sync",e)}
 }
-function setPay(v){localStorage.setItem(PAY,v);render();syncProfile({prizePaymentMethod:v})}
+
+async function setPay(v){
+  const current=localStorage.getItem(PAY)||"";
+  const rem=remainingPayLock();
+
+  if(current===v){
+    render();
+    return;
+  }
+  if(rem>0){
+    alert(lockText(rem));
+    render();
+    return;
+  }
+
+  const ok=confirm(
+    "تنبيه\n\nلا يمكن تغيير وسيلة استلام الجائزة إلا بعد 15 يوم.\n\nتأكيد اختيار "+v+" ؟"
+  );
+  if(!ok)return;
+
+  const changedAt=Date.now();
+  localStorage.setItem(PAY,v);
+  localStorage.setItem(PAY_AT,String(changedAt));
+  await syncProfile({
+    prizePaymentMethod:v,
+    prizePaymentChangedAt:firebase.firestore.Timestamp.fromMillis(changedAt),
+    prizePaymentLockDays:15
+  });
+
+  render();
+  alert("✅ تم تأكيد وسيلة استلام الجائزة: "+v+"\n🔒 لن تتمكن من تغييرها لمدة 15 يوم.");
+}
+
 async function saveBirthday(){
- const input=E("v1599Birthday"),msg=E("v1599BirthdayMsg");
- if(localStorage.getItem(DOB)){render();return}
- const v=input?.value;if(!v){if(msg)msg.textContent="اختر تاريخ الميلاد أولاً.";return}
- if(!confirm("تأكد من تاريخ ميلادك. بعد الحفظ لن تتمكن من تغييره أبداً."))return;
- localStorage.setItem(DOB,v);
- let rewarded=localStorage.getItem(DOB_REWARD)==="1";
- if(!rewarded){coins=Number(coins||0)+100;localStorage.setItem(DOB_REWARD,"1");if(typeof save==="function")save()}
- await syncProfile({birthdate:v,birthdateLocked:true,birthdateRewarded:true});
- render();if(msg)msg.textContent="🎁 تم حفظ تاريخ الميلاد وإضافة 100 Coin. التاريخ مقفل نهائياً 🔒";
+  const input=E("v1599Birthday"),msg=E("v1599BirthdayMsg");
+  if(localStorage.getItem(DOB)){render();return}
+  const v=input?.value;
+  if(!v){if(msg)msg.textContent="اختر تاريخ الميلاد أولاً.";return}
+  if(!confirm("تأكد من تاريخ ميلادك. بعد الحفظ لن تتمكن من تغييره أبداً."))return;
+
+  localStorage.setItem(DOB,v);
+  let rewarded=localStorage.getItem(DOB_REWARD)==="1";
+  if(!rewarded){
+    coins=Number(coins||0)+100;
+    localStorage.setItem(DOB_REWARD,"1");
+    if(typeof save==="function")save();
+  }
+
+  await syncProfile({
+    birthdate:v,
+    birthdateLocked:true,
+    birthdateRewarded:true
+  });
+
+  render();
+  if(msg)msg.textContent="🎁 تم حفظ تاريخ الميلاد وإضافة 100 Coin. التاريخ مقفل نهائياً 🔒";
 }
+
 document.addEventListener("DOMContentLoaded",render);
-new MutationObserver(()=>{if(document.getElementById("profile")?.classList.contains("on"))render()})
-.observe(document.getElementById("profile"),{attributes:true,attributeFilter:["class"]});
-window.V1599Profile={setPay,saveBirthday,render};
+
+const profile=E("profile");
+if(profile){
+  new MutationObserver(()=>{
+    if(profile.classList.contains("on"))render();
+  }).observe(profile,{attributes:true,attributeFilter:["class"]});
+}
+
+setInterval(()=>{
+  if(E("profile")?.classList.contains("on"))render();
+},60000);
+
+window.V1599Profile={setPay,saveBirthday,render,remainingPayLock};
 })();
 </script>
+
 
 </body></html>

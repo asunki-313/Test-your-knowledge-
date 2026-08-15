@@ -1,0 +1,37 @@
+{
+  "version": "V.15.99",
+  "questionBank": {
+    "count": 3500,
+    "unique": 3500,
+    "categories": 30,
+    "answerDistribution": {
+      "A": 875,
+      "B": 875,
+      "C": 875,
+      "D": 875
+    }
+  },
+  "instructionsPage": "TOP POSITION FIX VERIFIED",
+  "homePage": "UNCHANGED",
+  "prizePayment": {
+    "methods": [
+      "STC Bank",
+      "Barq"
+    ],
+    "changeLockDays": 15,
+    "confirmationRequired": true,
+    "autoUnlockAfter15Days": true
+  },
+  "birthday": {
+    "optional": true,
+    "rewardCoins": 100,
+    "lockedAfterSave": true
+  },
+  "battleArtwork": "VERIFIED",
+  "battleMode": "VERIFIED",
+  "navigation": "VERIFIED",
+  "exitPolicies": "VERIFIED",
+  "automaticPlayerSync": "VISIBLE",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}

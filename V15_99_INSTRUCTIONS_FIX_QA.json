@@ -1,0 +1,7 @@
+{
+  "version": "V.15.99",
+  "instructionsScreen": "instructions",
+  "fix": "force normal top block flow; remove vertical centering/min-height/transform on instructions screen only",
+  "homePage": "UNCHANGED",
+  "javascript": "PASS"
+}
