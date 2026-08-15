@@ -1,0 +1,25 @@
+{
+  "version": "V.16.10",
+  "stage": "Beta-1",
+  "betaGoal": "Real-user end-to-end test",
+  "questionBank": {
+    "count": 3500,
+    "unique": 3500,
+    "categories": 30,
+    "answerDistribution": {
+      "A": 875,
+      "B": 875,
+      "C": 875,
+      "D": 875
+    }
+  },
+  "paymentMethodLockDays": 30,
+  "paymentMethods": [
+    "STC Bank",
+    "Barq"
+  ],
+  "automaticPlayerSync": "VISIBLE",
+  "javascriptSyntax": "PASS",
+  "staleVersionScan": "PASS",
+  "status": "PASS"
+}

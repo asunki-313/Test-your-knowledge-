@@ -1,13 +1,13 @@
 {
-  "name": "اختبر ذكاءك V.15.99",
-  "short_name": "اختبر ذكاءك V15.99",
+  "name": "اختبر ذكاءك V.16.10 Beta-1",
+  "short_name": "اختبر ذكاءك V16.10",
   "lang": "ar-SA",
   "dir": "rtl",
-  "start_url": "./?v=15.99",
+  "start_url": "./?v=16.10-beta1",
   "display": "standalone",
   "background_color": "#07122a",
   "theme_color": "#10152f",
-  "description": "اختبر ذكاءك V.15.99 PWA — pre-beta update",
+  "description": "اختبر ذكاءك V.16.10 PWA — Beta-1 لاختبارات المستخدم الحقيقي",
   "icons": [
     {
       "src": "thinking_person.png",
@@ -16,6 +16,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "15.99",
-  "id": "./?v=15.99"
+  "version": "16.10",
+  "id": "./?v=16.10-beta1"
 }
