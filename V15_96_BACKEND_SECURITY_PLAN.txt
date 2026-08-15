@@ -1,4 +1,4 @@
-V.15.96 HARDENING — BACKEND ITEMS REQUIRED BEFORE CASH PRIZES
+V.15.97 HARDENING — BACKEND ITEMS REQUIRED BEFORE CASH PRIZES
 
 1. XP / Leaderboard anti-cheat:
    Client-side code cannot securely prove XP. Move authoritative XP awards to a trusted backend

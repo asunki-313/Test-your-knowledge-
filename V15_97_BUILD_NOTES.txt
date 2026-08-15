@@ -1,0 +1,25 @@
+V.15.97 PWA TEST BUILD
+
+Nickname policy:
+- Initial nickname assignment: free.
+- First nickname change: free.
+- Third nickname selection and every later change: 500 Coin.
+- 30-day cooldown between nickname changes.
+- Current Monthly Leaderboard Top 5 cannot change nickname until the month closes.
+- Monthly winner nickname remains independent of later nickname changes when archived server-side.
+
+Game exit policy:
+- Solo exit confirmation: "أفا متأكد طالع/ه ؟👀" + lose one whole heart.
+- Daily exit confirmation: same title + "بتخسر فرصة ربح 250 Coin".
+- Daily exit NEVER deducts 250 Coin from the player's existing balance.
+- Daily correct answers accumulate up to 250 Coin total (13 Coin for correct answers 1–10, 12 Coin for correct answers 11–20).
+- On early Daily exit, earned challenge Coins are retained; zero correct answers means zero earned Coin.
+- Daily challenge becomes used for the day after confirmed/abandoned exit.
+- Active sessions persist so page refresh/app closure cannot bypass the exit consequence.
+
+Existing V.15.96 hardening features retained, including Automatic Player Sync visible.
+
+Timer behavior:
+- The active 15-second question countdown continues while the exit-confirmation modal is open.
+- Choosing 'لا' closes the modal without pausing or resetting the timer.
+- Choosing 'إيه' stops the timer only when the player actually exits.

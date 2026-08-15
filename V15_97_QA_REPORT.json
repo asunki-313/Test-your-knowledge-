@@ -1,0 +1,31 @@
+{
+  "version": "V.15.97",
+  "questions": 3500,
+  "uniqueQuestions": 3500,
+  "categories": 30,
+  "answerPositions": {
+    "A": 875,
+    "B": 875,
+    "C": 875,
+    "D": 875
+  },
+  "nickname": {
+    "initial": "FREE",
+    "firstChange": "FREE",
+    "laterChanges": "500 Coin",
+    "cooldownDays": 30,
+    "monthlyTop5Lock": "IMPLEMENTED"
+  },
+  "exitPolicy": {
+    "solo": "confirm + lose 1 whole heart",
+    "daily": "confirm + keep earned challenge Coins; no balance penalty",
+    "dailyMaxCoins": 250,
+    "abandonedSessionRecovery": "IMPLEMENTED"
+  },
+  "automaticPlayerSync": "VISIBLE",
+  "javascriptSyntax": "PASS",
+  "staleVersionScan": "PASS",
+  "status": "PASS",
+  "exitConfirmationTimer": "15-second question countdown CONTINUES while modal is open",
+  "timerModalRegressionCheck": "PASS"
+}

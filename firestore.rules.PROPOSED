@@ -1,4 +1,4 @@
-// V.15.96 TEST — proposed Firestore hardening.
+// V.15.97 TEST — proposed Firestore hardening.
 // Deploy only after reviewing against your current Firebase schema.
 // Critical rule: clients may read leaderboard-safe fields, but prize finalization
 // and authoritative XP should ultimately be written by trusted backend code.

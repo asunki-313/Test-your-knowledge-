@@ -1,13 +1,13 @@
 {
-  "name": "اختبر ذكاءك V.15.96",
-  "short_name": "اختبر ذكاءك V15.96",
+  "name": "اختبر ذكاءك V.15.97",
+  "short_name": "اختبر ذكاءك V15.97",
   "lang": "ar-SA",
   "dir": "rtl",
-  "start_url": "./?v=15.96",
+  "start_url": "./?v=15.97",
   "display": "standalone",
   "background_color": "#07122a",
   "theme_color": "#10152f",
-  "description": "اختبر ذكاءك V.15.96 PWA — نسخة تجريبية Hardened قبل V.16",
+  "description": "اختبر ذكاءك V.15.97 PWA — Nickname policy + protected game exits",
   "icons": [
     {
       "src": "thinking_person.png",
@@ -16,6 +16,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "15.96",
-  "id": "./?v=15.96"
+  "version": "15.97",
+  "id": "./?v=15.97"
 }
