@@ -1,5 +1,5 @@
 {
-  "branch": "V.15.97 experimental",
+  "branch": "V.15.98 experimental",
   "baseUntouched": "V.15.8 zip was read-only",
   "javascriptSyntax": "PASS",
   "safeErrorLogging": "IMPLEMENTED",
@@ -11,7 +11,7 @@
   "otp60SecondCooldown": "IMPLEMENTED UX guard",
   "storageMigration": "IMPLEMENTED additive schema v3",
   "automaticPlayerSync": "KEPT VISIBLE",
-  "debugFirebaseButtons": "remain hidden from prior V.15.97 build",
+  "debugFirebaseButtons": "remain hidden from prior V.15.98 build",
   "questionQA": {
     "count": 3500,
     "uniqueNormalizedQuestions": 3500,
