@@ -170,55 +170,6 @@ body{padding-bottom:94px!important}
 @media(max-width:430px){.battleTeamNames{grid-template-columns:1fr}}
 </style>
 
-<style id="v1611-instructions-position-fix">
-#instructions.screen.on {
-  padding-top: max(10px, env(safe-area-inset-top)) !important;
-  margin-top: 0 !important;
-  min-height: auto !important;
-  align-content: start !important;
-  justify-content: flex-start !important;
-}
-#instructions.screen.on > *:first-child {
-  margin-top: 0 !important;
-}
-#instructions.screen.on .panel:first-of-type {
-  margin-top: 8px !important;
-}
-</style>
-
-
-<style id="v1611-instructions-real-fix">
-/* V.16.11: Instructions page ONLY. Home page intentionally untouched. */
-#instructions.screen,
-#instructions.screen.on {
-  display: none !important;
-  position: relative !important;
-  top: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  min-height: 0 !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding-top: 8px !important;
-  align-items: initial !important;
-  align-content: initial !important;
-  justify-content: initial !important;
-  place-items: initial !important;
-  place-content: initial !important;
-}
-#instructions.screen.on {
-  display: block !important;
-}
-#instructions.screen.on::before {
-  display: none !important;
-  content: none !important;
-}
-#instructions.screen.on > :first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-</style>
-
 <meta name="application-name" content="اختبر ذكاءك V.16.11 Beta-1">
 
 <style id="v1611-prize-phone-css">
@@ -226,6 +177,37 @@ body{padding-bottom:94px!important}
 .v1611-prize-phone-card .field{width:100%;box-sizing:border-box;text-align:center;direction:ltr}
 .v1611-prize-phone-card .btn{margin-top:8px;width:100%}
 </style>
+
+<style id="v1611-instructions-final-fix">
+#instructions.screen{
+  display:none !important;
+}
+#instructions.screen.on{
+  display:block !important;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:6200 !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  background:var(--bg,#07142e) !important;
+  padding:
+    max(16px, env(safe-area-inset-top))
+    16px
+    calc(110px + env(safe-area-inset-bottom))
+    16px !important;
+  margin:0 !important;
+  min-height:100dvh !important;
+  height:100dvh !important;
+  transform:none !important;
+  align-items:initial !important;
+  justify-content:initial !important;
+}
+#instructions.screen.on > .panel:first-child{
+  margin:0 auto !important;
+  max-width:760px !important;
+}
+</style>
+
 </head><body><div class="app">
 <div class="top"><div class="brand" aria-label="اختبر ذكاءك"></div><div class="wallet"><span class="coin-icon">$</span> <span id="coins">100</span> <span id="heartsDisplay" class="heart-display" aria-label="القلوب"></span><span id="heartTimer" style="display:none;margin-right:6px;color:#ffd84a;font-size:12px">⏳ <b id="heartCountdown">30:00</b></span></div></div>
 
@@ -429,11 +411,8 @@ function goRaw(id){
   $(id).classList.add('on');
   sync();
   if(id==='instructions'){
-    requestAnimationFrame(()=>{
-      window.scrollTo({top:0,left:0,behavior:'auto'});
-      document.documentElement.scrollTop=0;
-      document.body.scrollTop=0;
-    });
+    const instructions=document.getElementById('instructions');
+    if(instructions) instructions.scrollTop=0;
   }
 }
 function go(id){

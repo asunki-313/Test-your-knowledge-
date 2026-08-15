@@ -1,0 +1,11 @@
+{
+  "version": "V.16.11",
+  "fix": "Instructions screen is fixed independent scroll container",
+  "instructionsStartsAtTop": true,
+  "homePage": "UNCHANGED",
+  "googleLogin": "RETAINED",
+  "prizePhone": "RETAINED",
+  "stcBankBarq": "UNCHANGED",
+  "javascriptSyntax": "PASS",
+  "status": "PASS"
+}
