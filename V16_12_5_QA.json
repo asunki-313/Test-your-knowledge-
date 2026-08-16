@@ -1,0 +1,15 @@
+{
+  "version": "V.16.12.5 PWA",
+  "base": "V.16.12 PWA",
+  "homeText": "معلوماتك تجيب فلوس 💸🤩 فوز بيها 🧐",
+  "monthlyPrizes": {
+    "first": 600,
+    "second": 400,
+    "third": 200,
+    "fourth": 150,
+    "fifth": 150,
+    "total": 1500
+  },
+  "googleAuthFixRetained": true,
+  "javascriptSyntax": "PASS"
+}
