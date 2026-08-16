@@ -1,0 +1,8 @@
+{
+  "version": "V.16.11.7 PWA",
+  "base": "V.16.11.6 PWA",
+  "change": "Battle artwork cropped to teams + VS only",
+  "realTeamNameInputsRetained": true,
+  "realChallengeButtonsRetained": true,
+  "javascriptSyntax": "PASS"
+}
