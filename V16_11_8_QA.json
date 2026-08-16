@@ -1,0 +1,9 @@
+{
+  "version": "V.16.11.8 PWA",
+  "base": "V.16.11.7 PWA",
+  "googleSignedOutState": "Sign-in button visible and centered",
+  "googleSignedInState": "Sign-in hidden; sign-out visible and centered",
+  "assetsFolderRemoved": true,
+  "assetsReferencesRemaining": false,
+  "javascriptSyntax": "PASS"
+}
