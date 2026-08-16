@@ -1,0 +1,8 @@
+{
+  "version": "V.16.12 PWA",
+  "base": "V.16.11.8 PWA",
+  "removedForcedGoogleButtonDisplay": true,
+  "signedInState": "Google hidden, Sign Out visible",
+  "signedOutState": "Google visible, Sign Out hidden",
+  "javascriptSyntax": "PASS"
+}
