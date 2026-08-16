@@ -1,8 +1,8 @@
 {
   "version": "V.16.11.5 PWA",
   "base": "V.16.11.4 PWA",
-  "battleImageFileExists": true,
-  "battleImagePath": "./assets/battle_of_knowledge_v1599.png?v=16115",
-  "oldBrokenPathRemoved": true,
+  "battleImageMethod": "embedded data URI in index.html",
+  "serviceWorkerCache": "ikhtabr-v16-11-5-pwa",
+  "staleBattleReferenceRemoved": true,
   "javascriptSyntax": "PASS"
 }
