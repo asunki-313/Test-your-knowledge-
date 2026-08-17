@@ -1,0 +1,9 @@
+{
+  "version": "V.16.12.6 PWA",
+  "base": "V.16.12.5 PWA",
+  "appleButtonAboveGoogle": true,
+  "appleProviderPrepared": "apple.com",
+  "signedInState": "Apple hidden + Google hidden + Sign Out visible",
+  "signedOutState": "Apple visible + Google visible + Sign Out hidden",
+  "javascriptSyntax": "PASS"
+}
