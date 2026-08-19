@@ -1,3 +1,12 @@
+## V.16.12.7 PWA — Backend Cleaned
+- إزالة Apple Login مؤقتًا؛ تسجيل الدخول الحالي Google فقط.
+- إزالة Firebase connection test والـPhone OTP القديم من الكود.
+- تنظيف بيانات `users/{uid}` العامة من `phoneNumber` و`profileVersion`.
+- حذف تلقائي للحقول الاختبارية القديمة عند تسجيل دخول اللاعب:
+  `firebaseTest`, `lastTestAt`, `testVersion`, `syncTest`, `syncTestAt`, `syncTestVersion`.
+- بيانات الجائزة وتاريخ الميلاد بقيت مؤقتًا في وضعها الحالي إلى أن تُنقل إلى `privateUsers/{uid}` في المرحلة التالية.
+
+
 ## V.16.12.6 PWA
 - إضافة زر ** متابعة باستخدام Apple** فوق زر Google.
 - تجهيز تسجيل الدخول بـ Apple عبر Firebase `apple.com`.
