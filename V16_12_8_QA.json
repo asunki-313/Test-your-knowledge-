@@ -1,0 +1,10 @@
+{
+  "version": "V.16.12.8 PWA",
+  "base": "V.16.12.7 Backend Cleaned",
+  "iOSGoogleAuth": "redirect",
+  "desktopGoogleAuth": "popup with redirect fallback",
+  "redirectResultHandling": true,
+  "appleStillRemoved": true,
+  "phoneOTPStillRemoved": true,
+  "javascriptSyntax": "PASS"
+}

@@ -1,3 +1,10 @@
+## V.16.12.8 PWA — Google Auth Mobile Fix
+- على iPhone/iPad/iPod: استخدام `signInWithRedirect()` مباشرة لتسجيل الدخول بحساب Google.
+- على الكمبيوتر: استخدام Popup مع fallback إلى Redirect.
+- معالجة `getRedirectResult()` بعد الرجوع من Google.
+- لا تغييرات أخرى مقصودة على Backend Cleaned.
+
+
 ## V.16.12.7 PWA — Backend Cleaned
 - إزالة Apple Login مؤقتًا؛ تسجيل الدخول الحالي Google فقط.
 - إزالة Firebase connection test والـPhone OTP القديم من الكود.
