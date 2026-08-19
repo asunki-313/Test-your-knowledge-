@@ -1,28 +1,3 @@
-## V.16.12.8 PWA — Google Auth Mobile Fix
-- على iPhone/iPad/iPod: استخدام `signInWithRedirect()` مباشرة لتسجيل الدخول بحساب Google.
-- على الكمبيوتر: استخدام Popup مع fallback إلى Redirect.
-- معالجة `getRedirectResult()` بعد الرجوع من Google.
-- لا تغييرات أخرى مقصودة على Backend Cleaned.
-
-
-## V.16.12.7 PWA — Backend Cleaned
-- إزالة Apple Login مؤقتًا؛ تسجيل الدخول الحالي Google فقط.
-- إزالة Firebase connection test والـPhone OTP القديم من الكود.
-- تنظيف بيانات `users/{uid}` العامة من `phoneNumber` و`profileVersion`.
-- حذف تلقائي للحقول الاختبارية القديمة عند تسجيل دخول اللاعب:
-  `firebaseTest`, `lastTestAt`, `testVersion`, `syncTest`, `syncTestAt`, `syncTestVersion`.
-- بيانات الجائزة وتاريخ الميلاد بقيت مؤقتًا في وضعها الحالي إلى أن تُنقل إلى `privateUsers/{uid}` في المرحلة التالية.
-
-
-## V.16.12.6 PWA
-- إضافة زر ** متابعة باستخدام Apple** فوق زر Google.
-- تجهيز تسجيل الدخول بـ Apple عبر Firebase `apple.com`.
-- قبل تسجيل الدخول: يظهر Apple وGoogle.
-- بعد تسجيل الدخول بأي مزود: يختفي الزران ويظهر زر تسجيل الخروج فقط.
-- عند تسجيل الخروج: يعود زر Apple وزر Google.
-- لا توجد تغييرات أخرى مقصودة.
-
-
 ## V.16.12.5 PWA
 - الشاشة الرئيسية:
   **معلوماتك تجيب فلوس 💸🤩 فوز بيها 🧐**
