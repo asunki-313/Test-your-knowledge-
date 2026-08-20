@@ -1,0 +1,36 @@
+{
+  "version": "V.16.12.6 PWA",
+  "base": "V.16.12.5 PWA",
+  "googleAuthUnchangedFromBase": true,
+  "publicUserSyncFields": [
+    "uid",
+    "level",
+    "xp",
+    "totalXP",
+    "coins",
+    "correctTotal",
+    "wrongAnswers",
+    "questionsAnswered",
+    "gamesPlayed",
+    "dailyScore",
+    "streak",
+    "lastPlayed",
+    "nickname",
+    "monthlyXP",
+    "monthlyKey",
+    "updatedAt",
+    "playerSyncVersion"
+  ],
+  "phoneNumberRemovedFromPublicSync": true,
+  "profileVersionRemovedFromWrites": true,
+  "legacyFieldsAutoDeleted": [
+    "firebaseTest",
+    "lastTestAt",
+    "testVersion",
+    "syncTest",
+    "syncTestAt",
+    "syncTestVersion",
+    "profileVersion"
+  ],
+  "javascriptSyntax": "PASS"
+}

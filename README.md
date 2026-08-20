@@ -1,11 +1,10 @@
-## V.16.12.6 PWA — Task 1 Backend Cleanup
-- مبنية مباشرة على النسخة المعتمدة V.16.12.5.
-- لم يتم تغيير Google Login أو تصميم اللعبة.
-- إزالة Firebase connection test وPhone OTP القديم غير المستخدم.
+## V.16.12.6 PWA — Safe Backend Cleanup
+- مبنية مباشرة على V.16.12.5 المعتمدة.
+- كود Google Authentication محفوظ بدون أي تغيير.
 - إيقاف كتابة `phoneNumber` و`profileVersion` داخل `users/{uid}` العامة.
-- تنظيف تلقائي لحقول الاختبار القديمة عند تسجيل الدخول:
+- تنظيف تلقائي للحقول التجريبية القديمة عند تسجيل الدخول:
   `firebaseTest`, `lastTestAt`, `testVersion`, `syncTest`, `syncTestAt`, `syncTestVersion`, `profileVersion`.
-- بيانات رقم الجائزة ووسيلة الدفع وتاريخ الميلاد لم تُنقل بعد؛ سيتم فصلها لاحقًا إلى `privateUsers/{uid}`.
+- لم يتم حذف أو تعديل أي جزء من كود Authentication.
 
 
 ## V.16.12.5 PWA
