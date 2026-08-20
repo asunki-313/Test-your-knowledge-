@@ -1,3 +1,11 @@
+## V.16.12.7 PWA — Public Backend Schema
+- تثبيت حقول `users/{uid}` العامة.
+- إضافة `authProvider`, `loyaltyDays`, `loyaltyTier`, `loyaltyClaimedTier`.
+- كود Google Authentication محفوظ بدون تغيير.
+- البيانات الحساسة ليست ضمن المزامنة العامة.
+- نقل البيانات الخاصة إلى `privateUsers/{uid}` سيكون في الخطوة التالية بعد تجهيز Rules.
+
+
 ## V.16.12.6 PWA — Safe Backend Cleanup
 - مبنية مباشرة على V.16.12.5 المعتمدة.
 - كود Google Authentication محفوظ بدون أي تغيير.
