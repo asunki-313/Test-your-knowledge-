@@ -1,3 +1,11 @@
+## V.16.12.8 PWA — Public Schema Clean
+- مبنية على V.16.12.7.
+- إزالة `email`, `phoneNumber`, `displayName`, `photoURL`, `createdAt` من `users/{uid}` العامة.
+- الحقول القديمة تُحذف تلقائيًا بعد تسجيل الدخول.
+- Google Authentication لم يتغير.
+- لا تغيير على الواجهة أو منطق اللعب.
+
+
 ## V.16.12.7 PWA — Public Backend Schema
 - تثبيت حقول `users/{uid}` العامة.
 - إضافة `authProvider`, `loyaltyDays`, `loyaltyTier`, `loyaltyClaimedTier`.

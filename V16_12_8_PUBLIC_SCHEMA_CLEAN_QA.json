@@ -1,0 +1,13 @@
+{
+  "version": "V.16.12.8 PWA",
+  "base": "V.16.12.7 PWA",
+  "googleAuthUnchanged": true,
+  "removedFromPublicUsers": [
+    "email",
+    "phoneNumber",
+    "displayName",
+    "photoURL",
+    "createdAt"
+  ],
+  "javascriptSyntax": "PASS"
+}
