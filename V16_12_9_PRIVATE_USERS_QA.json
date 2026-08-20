@@ -1,0 +1,8 @@
+{
+  "version": "V.16.12.9 PWA",
+  "base": "V.16.12.8 PWA",
+  "googleAuthUnchanged": true,
+  "privateCollection": "privateUsers/{uid}",
+  "migrationOnLogin": true,
+  "javascriptSyntax": "PASS"
+}
