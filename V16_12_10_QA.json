@@ -1,0 +1,9 @@
+{
+  "version": "V.16.12.10 PWA",
+  "base": "V.16.12.9 PWA",
+  "googleAuthUnchanged": true,
+  "profilePrivateWritesFixed": true,
+  "localStorageMigrationKeysVerified": true,
+  "publicSchemaStillClean": true,
+  "javascriptSyntax": "PASS"
+}
