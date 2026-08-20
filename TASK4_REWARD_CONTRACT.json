@@ -1,0 +1,38 @@
+{
+  "version": "V.16.12.11",
+  "task": "4A Reward Contract",
+  "xp": {
+    "correct": 10,
+    "wrong_or_timeout": -5,
+    "level_xp": 500,
+    "normal_double_xp_correct": 20
+  },
+  "coins": {
+    "normal_correct": 10,
+    "normal_correct_double": 20,
+    "level_up": 50,
+    "daily_correct_questions_1_10": 13,
+    "daily_correct_questions_11_20": 12,
+    "daily_max": 250
+  },
+  "achievement_rewards": {
+    "first": 50,
+    "ten": 100,
+    "perfect": 250,
+    "hundred": 150,
+    "daily1": 100,
+    "streak7": 300,
+    "streak30": 1000,
+    "level5": 100,
+    "level10": 200,
+    "level15": 300,
+    "level20": 400,
+    "level25": 500,
+    "level30": 750,
+    "level35": 1000,
+    "level40": 1250,
+    "level45": 1500,
+    "level50": 2000
+  },
+  "note": "Task 4 is NOT complete yet. This file freezes reward values before moving authoritative calculation to server."
+}
