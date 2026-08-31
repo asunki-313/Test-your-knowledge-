@@ -1,13 +1,13 @@
 {
-  "name": "اختبر ذكاءك V.16.11",
-  "short_name": "اختبر ذكاءك V16.11",
+  "name": "اختبر ذكاءك V.16.12.13",
+  "short_name": "اختبر ذكاءك V16.12.13",
   "lang": "ar-SA",
   "dir": "rtl",
-  "start_url": "./?v=16.11",
+  "start_url": "./?v=16.12.13",
   "display": "standalone",
   "background_color": "#07122a",
   "theme_color": "#10152f",
-  "description": "اختبر ذكاءك V.16.11 PWA — Google Login",
+  "description": "اختبر ذكاءك V.16.12.13 PWA — 6000 Question Bank",
   "icons": [
     {
       "src": "thinking_person.png",
@@ -16,6 +16,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "16.11",
-  "id": "./?v=16.11"
+  "version": "16.12.13",
+  "id": "./?v=16.12.13"
 }

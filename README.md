@@ -1,3 +1,9 @@
+# V.16.12.13 PWA
+
+- Question bank upgraded and verified at 6000 questions.
+- Bank is embedded in index.html and included as data/questions_cumulative_6000.json.
+- Service Worker cache updated for offline PWA use.
+
 ## V.16.12.8 PWA — Public Schema Clean
 - مبنية على V.16.12.7.
 - إزالة `email`, `phoneNumber`, `displayName`, `photoURL`, `createdAt` من `users/{uid}` العامة.
@@ -117,7 +123,7 @@
 **Current Version:** V.16.11  
 **Stage:** Beta-1 — أول نسخة تجريبية فعلية  
 **Primary Goal:** اختبار رحلة المستخدم الحقيقي End-to-End  
-**Question Bank:** 3500 سؤال — 30 قسم
+**Question Bank:** 6000 سؤال — 30 قسم
 
 ## تغييرات V.16.11 Beta-1
 
@@ -181,7 +187,7 @@
 - إعدادات 20 / 30 / 40 سؤال ونظام كسر التعادل محفوظة.
 
 ### الأنظمة المحفوظة من الإصدارات السابقة
-- 3500 سؤال / 30 قسم.
+- 6000 سؤال / 30 قسم.
 - All Time / Monthly / Friends Leaderboard.
 - Monthly Top-5 prizes.
 - Automatic Player Sync ما زال ظاهراً في النسخة التجريبية.
@@ -224,7 +230,7 @@
 
 **Current Version:** V.16.11  
 **Build Type:** PWA Test / GitHub  
-**Question Bank:** 3500 سؤال — 30 قسم
+**Question Bank:** 6000 سؤال — 30 قسم
 
 > قاعدة المشروع: مع كل إصدار جديد يجب تحديث رقم النسخة في README وفي جميع الملفات والعناصر المرتبطة برقم الإصدار.
 
@@ -297,7 +303,7 @@
 - حماية Session من استخدام Refresh/إغلاق التطبيق لتجاوز قواعد الانسحاب.
 
 ## بنك الأسئلة
-- 3500 سؤال.
+- 6000 سؤال.
 - 30 قسمًا.
 - توزيع مواضع الإجابة الصحيحة:
   - A: 875
