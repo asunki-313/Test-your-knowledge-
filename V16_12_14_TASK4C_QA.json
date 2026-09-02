@@ -1,0 +1,15 @@
+{
+  "version": "V.16.12.14",
+  "task": "4C Client → submitGameResult bridge",
+  "status": "READY_FOR_DEPLOY_TEST",
+  "changes": [
+    "Firebase Functions compat SDK added",
+    "normal and daily rounds create sessionId",
+    "per-answer XP mutation disabled",
+    "finish/finishDaily submit result to Cloud Function",
+    "server response overwrites authoritative reward state",
+    "server response expanded with cumulative counters + achievements",
+    "temporary local fallback retained until deployment verified"
+  ],
+  "important": "Do not deploy final restrictive Firestore rules until submitGameResult is deployed and tested. Local fallback is intentionally temporary."
+}
