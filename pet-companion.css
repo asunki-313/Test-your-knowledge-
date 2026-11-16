@@ -40,3 +40,25 @@
 @keyframes iqPetHappy{0%,100%{transform:translateY(0)}40%{transform:translateY(-17px)}70%{transform:translateY(-5px)}}
 @keyframes iqEggWobble{0%,89%,100%{transform:rotate(0)}92%{transform:rotate(-8deg)}95%{transform:rotate(7deg)}}
 @media (prefers-reduced-motion:reduce){#iqPetRoot *,#iqPetRoot *::before,#iqPetRoot *::after{animation:none!important;transition:none!important}}
+
+/* Art update: exact character crops from the approved concept sheet; localized scope. */
+#iqPetRoot .iq-pet-chip{top:clamp(74px,12%,116px);bottom:auto;right:7px;width:57px;height:57px;border-radius:50%;padding:3px;background:radial-gradient(circle at 36% 24%,#83dfff 0%,#317ae6 29%,#152e85 68%,#101c58 100%);border:2px solid #a8ecff;box-shadow:0 0 0 3px #337fd050,0 0 15px #2eaeffb3,inset 0 0 11px #c9f5ffb0;overflow:visible;animation:iqBubbleGlow 3.8s ease-in-out infinite}
+#iqPetRoot .iq-pet-chip:after{content:'✦';position:absolute;top:-12px;left:1px;color:#e3ffff;font-size:19px;text-shadow:0 0 9px #70e9ff;pointer-events:none;animation:iqSpark 4s ease-in-out infinite}
+#iqPetRoot .iq-pet-chip .iq-pet-mini{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;border-radius:50%}
+#iqPetRoot .iq-pet-chip .iq-pet-body{width:100%;height:100%;display:block}
+#iqPetRoot .iq-pet-chip .iq-pet-sprite{width:100%;height:100%;object-fit:contain;transform:scale(1.38);filter:drop-shadow(0 0 4px #85e4ff);}
+#iqPetRoot .iq-pet-bubble-egg{font-size:29px;filter:drop-shadow(0 0 5px #fff)}
+#iqPetRoot .iq-pet-visual{width:100%;min-height:150px;display:grid;place-items:center;position:relative;transform-origin:center bottom;animation:iqPetBreath 3.2s ease-in-out infinite}
+#iqPetRoot .iq-pet-stage{min-height:180px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 65%,#7052ad 0%,#393066 48%,#1c1b49 100%);box-shadow:inset 0 0 22px #9776df50;border:1px solid #a37ed35c}
+#iqPetRoot .iq-pet-stage .iq-pet-sprite{display:block;width:min(94%,270px);height:170px;object-fit:contain;filter:hue-rotate(var(--pet-hue,0deg)) drop-shadow(0 0 13px #e9a7ff90);animation:iqPetSway 4.8s ease-in-out infinite}
+#iqPetRoot .iq-pet-item{position:absolute;right:calc(50% - 82px);top:18px;font-size:30px;filter:drop-shadow(0 0 8px #ffe39b);pointer-events:none}
+#iqPetRoot .iq-pet-evolution-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:10px 0}
+#iqPetRoot .iq-pet-evolution-grid button{min-width:0;background:#403266;color:white;border:1px solid #8d78bb;border-radius:12px;padding:5px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px}
+#iqPetRoot .iq-pet-evolution-grid button[aria-pressed="true"]{border:2px solid #ffdc80;background:#634487}
+#iqPetRoot .iq-pet-evolution-grid img{width:100%;height:72px;object-fit:contain}
+#iqPetRoot .iq-pet-dialog{align-items:center}
+@keyframes iqBubbleGlow{0%,100%{box-shadow:0 0 0 3px #337fd050,0 0 11px #2eaeff99,inset 0 0 11px #c9f5ffb0}50%{box-shadow:0 0 0 4px #337fd055,0 0 20px #2eaeffcc,inset 0 0 15px #c9f5ffdd}}
+@keyframes iqSpark{0%,100%{opacity:.6;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes iqPetSway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(1deg)}}
+@media(max-width:420px){#iqPetRoot .iq-pet-chip{right:5px;width:51px;height:51px;top:88px}}
+@media(prefers-reduced-motion:reduce){#iqPetRoot .iq-pet-chip,#iqPetRoot .iq-pet-chip:after,#iqPetRoot .iq-pet-sprite{animation:none!important}}
