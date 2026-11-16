@@ -1,0 +1,1 @@
+V4: Fixed broken virtual-pet image when pet-assets files are not separately hosted (image data embedded in pet-companion-v4.js). Removed the center-page pet button (V3). Floating icon at upper-right; hidden while companion modal is open. Raised modal above bottom navigation. Restored use of original local companion save key. This is still a demo; backend untouched.

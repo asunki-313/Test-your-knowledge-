@@ -1,0 +1,76 @@
+/* Optional, local-only companion. Namespaced to avoid changing quiz styles. */
+#iqPetRoot{--pet-main:#ee665b;--pet-light:#ffbe91;--pet-accent:#f7c96c;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;direction:rtl;z-index:5000}
+#iqPetRoot *{box-sizing:border-box}
+#iqPetRoot button{cursor:pointer;font:inherit}
+#iqPetRoot .iq-pet-chip{position:fixed;right:10px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:5001;width:60px;height:65px;border-radius:20px;background:linear-gradient(155deg,#25205a,#53338f);border:2px solid #edc57b;box-shadow:0 3px 12px #0005;padding:2px;color:white;display:flex;justify-content:center;align-items:center;flex-direction:column}
+#iqPetRoot .iq-pet-chip svg{width:47px;height:47px}
+#iqPetRoot .iq-pet-chip small{font-size:9px;font-weight:800;line-height:1}
+#iqPetRoot .iq-pet-dialog[hidden],#iqPetRoot .iq-pet-chip[hidden]{display:none!important}
+#iqPetRoot .iq-pet-dialog{position:fixed;inset:0;z-index:5002;background:#08091c99;display:flex;align-items:flex-end;justify-content:center;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+#iqPetRoot .iq-pet-box{background:linear-gradient(160deg,#282050,#13162e);border:2px solid #b996e8;border-radius:24px;color:#fff;padding:16px;max-width:460px;width:100%;max-height:85%;max-height:85dvh;overflow:auto;box-shadow:0 15px 40px #0009}
+#iqPetRoot .iq-pet-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+#iqPetRoot .iq-pet-top strong{font-size:19px;color:#ffe1a4}
+#iqPetRoot .iq-pet-x{border:1px solid #9481ba;background:#493568;color:white;border-radius:12px;min-width:42px;min-height:42px}
+#iqPetRoot .iq-pet-stage{min-height:160px;display:grid;place-items:center;border-radius:18px;background:radial-gradient(circle at 50% 70%,#67539e,#292452 68%,#202047);margin:8px 0;padding:10px}
+#iqPetRoot .iq-pet-stage svg{width:164px;max-width:70%;height:160px;overflow:visible}
+#iqPetRoot .iq-pet-stage .iq-pet-egg{font-size:90px;line-height:1.6;filter:drop-shadow(0 8px 6px #0007);animation:iqEggWobble 4s ease-in-out infinite}
+#iqPetRoot .iq-pet-copy{font-size:13px;color:#e9dffc;line-height:1.8;margin:7px 0 12px}
+#iqPetRoot .iq-pet-choice{display:flex;flex-wrap:wrap;gap:8px;margin:7px 0 12px}
+#iqPetRoot .iq-pet-choice button{background:#41366c;border:1px solid #806cb9;color:white;border-radius:12px;padding:9px 12px;min-height:44px;flex:1 1 90px}
+#iqPetRoot .iq-pet-choice button[aria-pressed="true"]{border:2px solid #ffe09e;background:#65508d}
+#iqPetRoot .iq-pet-primary{background:#f5be6a!important;border:0!important;color:#28203c!important;font-weight:850!important;min-height:45px;border-radius:12px;padding:10px 18px;width:100%;margin-top:8px}
+#iqPetRoot .iq-pet-muted{background:transparent!important;border:1px solid #9280b5!important;color:#ddd2ed!important;border-radius:12px;min-height:42px;padding:8px 12px}
+#iqPetRoot .iq-pet-swatches{display:flex;gap:10px;flex-wrap:wrap;margin:9px 0 14px}
+#iqPetRoot .iq-pet-swatch{width:44px;height:44px;border-radius:50%;border:3px solid #aaa;background:var(--swatch);color:white;font-size:22px;text-shadow:0 1px 3px #000}
+#iqPetRoot .iq-pet-swatch[aria-pressed="true"]{outline:3px solid #ffe49c;outline-offset:2px}
+#iqPetRoot .iq-pet-status{font-size:12px;color:#e9dffc;min-height:22px}
+#iqPetRoot .iq-pet-prog{height:9px;background:#51436c;border-radius:10px;overflow:hidden;margin:8px 0}
+#iqPetRoot .iq-pet-prog i{display:block;height:100%;background:#e4ba65;width:0%}
+#iqPetRoot .iq-pet-row{display:flex;gap:9px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#iqPetRoot .iq-pet-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+#iqPetRoot .iq-pet-body{transform-origin:50% 75%;animation:iqPetBreath 3.2s ease-in-out infinite}
+#iqPetRoot .iq-pet-eyes{transform-origin:50% 51%;animation:iqPetBlink 6.4s infinite}
+#iqPetRoot .iq-pet-tail{transform-origin:66% 72%;animation:iqPetTail 2.5s ease-in-out infinite}
+#iqPetRoot .iq-pet-wing{transform-origin:62% 50%;animation:iqPetWing 3.2s ease-in-out infinite}
+#iqPetRoot .iq-pet-body.iq-pet-happy{animation:iqPetHappy .65s ease-in-out 2}
+@keyframes iqPetBreath{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-2px) scale(1.015)}}
+@keyframes iqPetBlink{0%,41%,44%,100%{transform:scaleY(1)}42%{transform:scaleY(.08)}}
+@keyframes iqPetTail{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(8deg)}}
+@keyframes iqPetWing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(9deg)}}
+@keyframes iqPetHappy{0%,100%{transform:translateY(0)}40%{transform:translateY(-17px)}70%{transform:translateY(-5px)}}
+@keyframes iqEggWobble{0%,89%,100%{transform:rotate(0)}92%{transform:rotate(-8deg)}95%{transform:rotate(7deg)}}
+@media (prefers-reduced-motion:reduce){#iqPetRoot *,#iqPetRoot *::before,#iqPetRoot *::after{animation:none!important;transition:none!important}}
+
+/* Art update: exact character crops from the approved concept sheet; localized scope. */
+#iqPetRoot .iq-pet-chip{top:clamp(74px,12%,116px);bottom:auto;right:7px;width:57px;height:57px;border-radius:50%;padding:3px;background:radial-gradient(circle at 36% 24%,#83dfff 0%,#317ae6 29%,#152e85 68%,#101c58 100%);border:2px solid #a8ecff;box-shadow:0 0 0 3px #337fd050,0 0 15px #2eaeffb3,inset 0 0 11px #c9f5ffb0;overflow:visible;animation:iqBubbleGlow 3.8s ease-in-out infinite}
+#iqPetRoot .iq-pet-chip:after{content:'✦';position:absolute;top:-12px;left:1px;color:#e3ffff;font-size:19px;text-shadow:0 0 9px #70e9ff;pointer-events:none;animation:iqSpark 4s ease-in-out infinite}
+#iqPetRoot .iq-pet-chip .iq-pet-mini{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;border-radius:50%}
+#iqPetRoot .iq-pet-chip .iq-pet-body{width:100%;height:100%;display:block}
+#iqPetRoot .iq-pet-chip .iq-pet-sprite{width:100%;height:100%;object-fit:contain;transform:scale(1.38);filter:drop-shadow(0 0 4px #85e4ff);}
+#iqPetRoot .iq-pet-bubble-egg{font-size:29px;filter:drop-shadow(0 0 5px #fff)}
+#iqPetRoot .iq-pet-visual{width:100%;min-height:150px;display:grid;place-items:center;position:relative;transform-origin:center bottom;animation:iqPetBreath 3.2s ease-in-out infinite}
+#iqPetRoot .iq-pet-stage{min-height:180px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 65%,#7052ad 0%,#393066 48%,#1c1b49 100%);box-shadow:inset 0 0 22px #9776df50;border:1px solid #a37ed35c}
+#iqPetRoot .iq-pet-stage .iq-pet-sprite{display:block;width:min(94%,270px);height:170px;object-fit:contain;filter:hue-rotate(var(--pet-hue,0deg)) drop-shadow(0 0 13px #e9a7ff90);animation:iqPetSway 4.8s ease-in-out infinite}
+#iqPetRoot .iq-pet-item{position:absolute;right:calc(50% - 82px);top:18px;font-size:30px;filter:drop-shadow(0 0 8px #ffe39b);pointer-events:none}
+#iqPetRoot .iq-pet-evolution-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:10px 0}
+#iqPetRoot .iq-pet-evolution-grid button{min-width:0;background:#403266;color:white;border:1px solid #8d78bb;border-radius:12px;padding:5px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px}
+#iqPetRoot .iq-pet-evolution-grid button[aria-pressed="true"]{border:2px solid #ffdc80;background:#634487}
+#iqPetRoot .iq-pet-evolution-grid img{width:100%;height:72px;object-fit:contain}
+#iqPetRoot .iq-pet-dialog{align-items:center}
+@keyframes iqBubbleGlow{0%,100%{box-shadow:0 0 0 3px #337fd050,0 0 11px #2eaeff99,inset 0 0 11px #c9f5ffb0}50%{box-shadow:0 0 0 4px #337fd055,0 0 20px #2eaeffcc,inset 0 0 15px #c9f5ffdd}}
+@keyframes iqSpark{0%,100%{opacity:.6;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes iqPetSway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(1deg)}}
+@media(max-width:420px){#iqPetRoot .iq-pet-chip{right:5px;width:51px;height:51px;top:88px}}
+@media(prefers-reduced-motion:reduce){#iqPetRoot .iq-pet-chip,#iqPetRoot .iq-pet-chip:after,#iqPetRoot .iq-pet-sprite{animation:none!important}}
+
+
+/* V3 UI fix: only floating bubble, always at upper-right for easier reach. */
+#iqPetRoot .iq-pet-chip{position:fixed!important;top:max(82px, calc(env(safe-area-inset-top, 0px) + 68px))!important;right:10px!important;bottom:auto!important;left:auto!important;width:58px!important;height:58px!important;border-radius:50%!important;padding:3px!important;display:flex!important;z-index:7001!important;}
+@media(max-width:420px){#iqPetRoot .iq-pet-chip{top:max(78px, calc(env(safe-area-inset-top, 0px) + 62px))!important;right:8px!important;width:54px!important;height:54px!important;}}
+
+/* V4: keep launcher independent of scroll; prevent bubble from covering dialog. */
+#iqPetRoot .iq-pet-chip{position:fixed!important;top:max(82px,calc(env(safe-area-inset-top, 0px) + 66px))!important;right:10px!important;bottom:auto!important;z-index:2147483000!important;}
+#iqPetRoot.iq-pet-open .iq-pet-chip{visibility:hidden!important;pointer-events:none!important;}
+#iqPetRoot .iq-pet-dialog{z-index:2147483001!important;inset:0!important;align-items:center!important;padding:calc(16px + env(safe-area-inset-top,0px)) 10px calc(16px + env(safe-area-inset-bottom,0px))!important;}
+#iqPetRoot .iq-pet-box{max-height:calc(100dvh - 45px)!important;overscroll-behavior:contain;}
+#iqPetRoot .iq-pet-sprite{color:transparent;}
